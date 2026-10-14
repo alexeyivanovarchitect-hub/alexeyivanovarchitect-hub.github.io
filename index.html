@@ -3,128 +3,244 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Алексей Иванов — архитектор</title>
-<meta name="description" content="Алексей Иванов — архитектор. Проекты, подход к работе и контакты.">
+<title>Aleksei Ivanov — Architecture and Design</title>
+<meta name="description" content="Алексей Иванов, архитектор. Интерьеры, частные резиденции, жилые дома и общественные пространства.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f6f4f0; --fg: #1c1b19; --muted: #6b675f; --line: #d9d4ca; --accent: #8a5a3b; --card: #ece8e0;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #141412; --fg: #ece9e3; --muted: #9a958b; --line: #2e2c28; --accent: #c98e66; --card: #1d1c19; }
+    --bg: #f6f6f4;
+    --fg: #111111;
+    --muted: #6e6e6b;
+    --line: #d6d6d2;
+    --accent: #d42a20;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--fg); font: 300 17px/1.65 Inter, system-ui, sans-serif; }
-  a { color: inherit; }
-  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-  header { position: sticky; top: 0; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); z-index: 10; }
-  nav { display: flex; justify-content: space-between; align-items: center; height: 64px; }
-  .logo { font: 700 20px 'Playfair Display', serif; text-decoration: none; letter-spacing: .02em; }
-  nav ul { display: flex; gap: 28px; list-style: none; font-size: 15px; }
-  nav ul a { text-decoration: none; color: var(--muted); }
-  nav ul a:hover { color: var(--fg); }
-  .hero { padding: 120px 0 100px; border-bottom: 1px solid var(--line); }
-  .eyebrow { text-transform: uppercase; letter-spacing: .18em; font-size: 13px; color: var(--accent); font-weight: 600; }
-  h1 { font: 500 clamp(40px, 7vw, 84px)/1.05 'Playfair Display', serif; margin: 18px 0 28px; }
-  .hero p { max-width: 560px; color: var(--muted); font-size: 19px; }
-  .btn { display: inline-block; margin-top: 36px; padding: 14px 28px; border: 1px solid var(--fg); text-decoration: none; font-weight: 400; transition: .2s; }
-  .btn:hover { background: var(--fg); color: var(--bg); }
-  section { padding: 96px 0; border-bottom: 1px solid var(--line); }
-  h2 { font: 500 clamp(30px, 4vw, 44px)/1.15 'Playfair Display', serif; margin-bottom: 48px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 28px; }
-  .project .img { aspect-ratio: 4/3; background: var(--card); border: 1px solid var(--line); display: grid; place-items: center; color: var(--muted); font-size: 14px; position: relative; overflow: hidden; }
-  .project .img::before { content: ""; position: absolute; inset: 22% 18%; border: 1px solid var(--line); }
-  .project h3 { font: 600 18px Inter, sans-serif; margin-top: 16px; }
-  .project span { color: var(--muted); font-size: 14px; }
-  .about { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; }
-  .about p + p { margin-top: 18px; }
-  .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; border-top: 1px solid var(--line); }
-  .service { padding: 28px 24px 28px 0; border-bottom: 1px solid var(--line); }
-  .service b { display: block; font-weight: 600; margin-bottom: 6px; }
-  .service p { color: var(--muted); font-size: 15px; }
-  .contact p { font-size: 20px; }
-  .contact a { color: var(--accent); }
-  footer { padding: 32px 0; color: var(--muted); font-size: 14px; }
+  body { background: var(--bg); color: var(--fg); font: 400 18px/1.6 Jost, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header { position: sticky; top: 0; z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 96px; }
+  .logo { display: flex; align-items: center; gap: 14px; color: var(--fg); }
+  .logo-mark { height: 54px; width: auto; flex: none; }
+  .logo-sep { width: 1px; height: 60px; background: var(--fg); opacity: .55; }
+  .logo-text { display: flex; flex-direction: column; line-height: 1; }
+  .logo-name { font-weight: 300; font-size: 17px; letter-spacing: .14em; line-height: 1.05; }
+  .logo-sub { font-weight: 400; font-size: 6.5px; letter-spacing: .5em; margin-top: 7px; line-height: 1.6; }
+  .right { display: flex; align-items: center; gap: 36px; }
+  .lang { font-weight: 500; font-size: 17px; letter-spacing: .2em; color: var(--muted); }
+  .lang button { background: none; border: 0; font: inherit; letter-spacing: inherit; color: inherit; cursor: pointer; padding: 0; }
+  .lang button.on { color: var(--fg); }
+  .menu-btn { background: none; border: 2px solid var(--fg); color: var(--fg); font: 500 17px Jost, sans-serif; letter-spacing: .2em; padding: 16px 26px 16px 30px; cursor: pointer; text-transform: uppercase; transition: .2s; }
+  .menu-btn:hover { background: var(--fg); color: var(--bg); }
+
+  /* Menu overlay */
+  .menu { position: fixed; inset: 0; z-index: 30; background: var(--bg); display: flex; flex-direction: column; padding: 0 24px; transform: translateY(-100%); transition: transform .45s cubic-bezier(.7,0,.2,1); }
+  .menu.open { transform: none; }
+  .menu .bar { max-width: 1200px; width: 100%; margin: 0 auto; }
+  .menu nav { max-width: 1200px; width: 100%; margin: auto; display: flex; flex-direction: column; gap: 8px; }
+  .menu nav a { font-weight: 300; font-size: clamp(40px, 8vw, 72px); line-height: 1.2; }
+  .menu nav a:hover { color: var(--accent); }
+
+  /* Hero */
+  .hero { padding: 140px 0 120px; border-bottom: 1px solid var(--line); }
+  .tags { font-weight: 500; font-size: 17px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); max-width: 680px; line-height: 1.6; }
+  h1 { font-weight: 400; font-size: clamp(44px, 7.4vw, 96px); line-height: 1.12; letter-spacing: -.01em; margin: 56px 0 64px; max-width: 980px; }
+  h1 em { font-style: normal; color: var(--accent); }
+  .lead { font-weight: 400; font-size: clamp(22px, 2.4vw, 26px); line-height: 1.6; color: var(--muted); max-width: 760px; }
+
+  /* Sections */
+  section { padding: 110px 0; border-bottom: 1px solid var(--line); }
+  .label { font-weight: 500; font-size: 15px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+  h2 { font-weight: 400; font-size: clamp(34px, 5vw, 56px); line-height: 1.15; margin-bottom: 56px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 40px 28px; }
+  .project .img { aspect-ratio: 4/5; background: #e9e9e5; display: grid; place-items: center; color: var(--muted); font-size: 14px; letter-spacing: .2em; text-transform: uppercase; }
+  .project h3 { font-weight: 400; font-size: 22px; margin-top: 18px; }
+  .project span { color: var(--muted); font-size: 15px; letter-spacing: .06em; }
+  .about { display: grid; grid-template-columns: 1fr 1.5fr; gap: 64px; }
+  .about p { color: var(--muted); font-size: 21px; }
+  .about p + p { margin-top: 20px; }
+  .services { border-top: 1px solid var(--line); }
+  .service { display: grid; grid-template-columns: 80px 1fr 1.4fr; gap: 24px; padding: 32px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .service i { font-style: normal; color: var(--accent); font-weight: 500; letter-spacing: .1em; }
+  .service b { font-weight: 400; font-size: 24px; }
+  .service p { color: var(--muted); }
+  .contact h2 a { border-bottom: 2px solid var(--accent); }
+  .contact h2 a:hover { color: var(--accent); }
+  footer { padding: 36px 0; color: var(--muted); font-size: 14px; letter-spacing: .14em; text-transform: uppercase; }
+
   @media (max-width: 720px) {
-    nav ul { gap: 16px; font-size: 14px; }
-    .wrap { padding: 0 16px; }
-    .hero { padding: 72px 0 64px; }
-    section { padding: 64px 0; }
-    .about { grid-template-columns: 1fr; gap: 24px; }
-    .about h2 { margin-bottom: 0; }
+    .wrap, .menu { padding: 0 16px; }
+    .bar { height: 84px; }
+    .logo { gap: 10px; }
+    .logo-mark { height: 46px; }
+    .logo-sep { height: 52px; }
+    .logo-name { font-size: 15px; }
+    .logo-sub { font-size: 5.5px; letter-spacing: .45em; }
+    .right { gap: 18px; }
+    .lang { font-size: 15px; display: flex; flex-direction: column; line-height: 1.5; }
+    .lang .slash { display: none; }
+    .menu-btn { font-size: 15px; padding: 14px 16px 14px 20px; }
+    .hero { padding: 72px 0 72px; }
+    .tags { font-size: 14px; }
+    h1 { margin: 40px 0 44px; }
+    section { padding: 72px 0; }
+    .about { grid-template-columns: 1fr; gap: 0; }
+    .service { grid-template-columns: 48px 1fr; }
+    .service p { grid-column: 2; }
   }
-  @media (max-width: 420px) { nav ul li:nth-child(2) { display: none; } }
+  @media (max-width: 380px) {
+    .logo-text { display: none; }
+    .logo-sep { display: none; }
+  }
 </style>
 </head>
 <body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 100 70">
+    <path d="M3 68 L36 4 L69 68" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="miter"/>
+    <rect x="86" y="3" width="7" height="65" fill="currentColor"/>
+  </symbol>
+</svg>
+
 <header>
-  <nav class="wrap">
-    <a class="logo" href="#">А. Иванов</a>
-    <ul>
-      <li><a href="#projects">Проекты</a></li>
-      <li><a href="#about">Обо мне</a></li>
-      <li><a href="#contact">Контакты</a></li>
-    </ul>
-  </nav>
+  <div class="wrap bar">
+    <a class="logo" href="#" aria-label="Aleksei Ivanov — Architecture and Design">
+      <svg class="logo-mark" viewBox="0 0 100 70"><use href="#mark"/></svg>
+      <span class="logo-sep"></span>
+      <span class="logo-text">
+        <span class="logo-name">ΛLEKSEI<br>IVΛNOV</span>
+        <span class="logo-sub">ARCHITECTURE<br>AND DESIGN</span>
+      </span>
+    </a>
+    <div class="right">
+      <div class="lang">
+        <button data-set-lang="ru" class="on">RU</button><span class="slash"> / </span><button data-set-lang="en">EN</button>
+      </div>
+      <button class="menu-btn" data-menu-open data-i18n="menu">Меню</button>
+    </div>
+  </div>
 </header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="bar">
+    <a class="logo" href="#" data-menu-close aria-label="Aleksei Ivanov">
+      <svg class="logo-mark" viewBox="0 0 100 70"><use href="#mark"/></svg>
+    </a>
+    <button class="menu-btn" data-menu-close data-i18n="close">Закрыть</button>
+  </div>
+  <nav>
+    <a href="#projects" data-menu-close data-i18n="nav_projects">Проекты</a>
+    <a href="#about" data-menu-close data-i18n="nav_about">Обо мне</a>
+    <a href="#services" data-menu-close data-i18n="nav_services">Услуги</a>
+    <a href="#contact" data-menu-close data-i18n="nav_contact">Контакты</a>
+  </nav>
+</div>
 
 <main>
   <div class="hero">
     <div class="wrap">
-      <div class="eyebrow">Архитектор</div>
-      <h1>Алексей Иванов</h1>
-      <p>Проектирую жилые и общественные пространства, где форма, свет и материал работают на людей, которые в них живут.</p>
-      <a class="btn" href="#projects">Смотреть проекты</a>
+      <p class="tags" data-i18n="tags">Архитектура · Интерьеры · Градостроительство · BIM</p>
+      <h1 data-i18n-html="h1">Спроектируем так, чтобы домой хотелось <em>даже из&nbsp;отпуска.</em></h1>
+      <p class="lead" data-i18n="lead">Алексей Иванов, архитектор. Проектирую интерьеры, частные резиденции, жилые дома и общественные пространства. Рутину проекта автоматизирую с помощью BIM и AI, чтобы время уходило на то, как в пространстве будет жить человек.</p>
     </div>
   </div>
 
   <section id="projects">
     <div class="wrap">
-      <h2>Избранные проекты</h2>
+      <p class="label" data-i18n="nav_projects">Проекты</p>
+      <h2 data-i18n="projects_h">Избранные работы</h2>
       <div class="grid">
-        <article class="project"><div class="img">Фото проекта</div><h3>Название проекта</h3><span>Тип объекта · Город · Год</span></article>
-        <article class="project"><div class="img">Фото проекта</div><h3>Название проекта</h3><span>Тип объекта · Город · Год</span></article>
-        <article class="project"><div class="img">Фото проекта</div><h3>Название проекта</h3><span>Тип объекта · Город · Год</span></article>
+        <article class="project"><div class="img" data-i18n="photo">Фото</div><h3 data-i18n="p_name">Название проекта</h3><span data-i18n="p_meta">Тип · Город · Год</span></article>
+        <article class="project"><div class="img" data-i18n="photo">Фото</div><h3 data-i18n="p_name">Название проекта</h3><span data-i18n="p_meta">Тип · Город · Год</span></article>
+        <article class="project"><div class="img" data-i18n="photo">Фото</div><h3 data-i18n="p_name">Название проекта</h3><span data-i18n="p_meta">Тип · Город · Год</span></article>
       </div>
     </div>
   </section>
 
   <section id="about">
     <div class="wrap about">
-      <h2>Обо мне</h2>
       <div>
-        <p>Здесь будет короткий рассказ о вас: образование, опыт, ключевые проекты и то, что для вас важно в архитектуре.</p>
-        <p>Опишите свой подход к работе: как вы начинаете проект, как работаете с заказчиком и что он получает в результате.</p>
+        <p class="label" data-i18n="nav_about">Обо мне</p>
+        <h2 data-i18n="about_h">Подход</h2>
+      </div>
+      <div>
+        <p data-i18n="about_1">Здесь будет короткий рассказ: образование, опыт, ключевые проекты и то, что для вас важно в архитектуре.</p>
+        <p data-i18n="about_2">Как вы начинаете проект, как работаете с заказчиком и что он получает в результате.</p>
       </div>
     </div>
   </section>
 
   <section id="services">
     <div class="wrap">
-      <h2>Услуги</h2>
+      <p class="label" data-i18n="nav_services">Услуги</p>
+      <h2 data-i18n="services_h">Что я делаю</h2>
       <div class="services">
-        <div class="service"><b>Архитектурное проектирование</b><p>От концепции до рабочей документации.</p></div>
-        <div class="service"><b>Дизайн интерьера</b><p>Планировки, материалы, свет.</p></div>
-        <div class="service"><b>Авторский надзор</b><p>Сопровождение на стройке.</p></div>
-        <div class="service"><b>Консультации</b><p>Оценка участка и идеи.</p></div>
+        <div class="service"><i>01</i><b data-i18n="s1">Архитектура</b><p data-i18n="s1d">Частные резиденции, жилые дома и общественные здания — от концепции до рабочей документации.</p></div>
+        <div class="service"><i>02</i><b data-i18n="s2">Интерьеры</b><p data-i18n="s2d">Планировки, материалы, свет, мебель и авторский надзор.</p></div>
+        <div class="service"><i>03</i><b data-i18n="s3">Градостроительство</b><p data-i18n="s3d">Концепции застройки и благоустройства территорий.</p></div>
+        <div class="service"><i>04</i><b>BIM</b><p data-i18n="s4d">Информационное моделирование и автоматизация проекта с помощью AI.</p></div>
       </div>
     </div>
   </section>
 
   <section id="contact" class="contact">
     <div class="wrap">
-      <h2>Контакты</h2>
-      <p>Обсудим ваш проект: <a href="mailto:your@email.com">your@email.com</a></p>
+      <p class="label" data-i18n="nav_contact">Контакты</p>
+      <h2><span data-i18n="contact_h">Обсудим ваш проект:</span><br><a href="mailto:your@email.com">your@email.com</a></h2>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap">© <span id="y">2026</span> Алексей Иванов</div>
+  <div class="wrap">© <span id="y">2026</span> Aleksei Ivanov · Architecture and Design</div>
 </footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+<script>
+  const en = {
+    menu: 'Menu', close: 'Close',
+    nav_projects: 'Projects', nav_about: 'About', nav_services: 'Services', nav_contact: 'Contact',
+    tags: 'Architecture · Interiors · Urban planning · BIM',
+    h1: 'We design homes you’ll want to return to <em>even from vacation.</em>',
+    lead: 'Aleksei Ivanov, architect. I design interiors, private residences, housing and public spaces. I automate project routine with BIM and AI, so the time goes into how people will live in the space.',
+    projects_h: 'Selected work', photo: 'Photo', p_name: 'Project name', p_meta: 'Type · City · Year',
+    about_h: 'Approach',
+    about_1: 'A short story goes here: education, experience, key projects and what matters to you in architecture.',
+    about_2: 'How you start a project, how you work with clients and what they get in the end.',
+    services_h: 'What I do',
+    s1: 'Architecture', s1d: 'Private residences, housing and public buildings — from concept to construction documents.',
+    s2: 'Interiors', s2d: 'Layouts, materials, lighting, furniture and site supervision.',
+    s3: 'Urban planning', s3d: 'Development and landscaping concepts.',
+    s4d: 'Building information modelling and AI-driven project automation.',
+    contact_h: 'Let’s discuss your project:'
+  };
+  const ru = {};
+  document.querySelectorAll('[data-i18n]').forEach(el => ru[el.dataset.i18n] = el.textContent);
+  document.querySelectorAll('[data-i18n-html]').forEach(el => ru[el.dataset.i18nHtml] = el.innerHTML);
+
+  function setLang(lang) {
+    const dict = lang === 'en' ? en : ru;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => { const v = dict[el.dataset.i18n]; if (v) el.textContent = v; });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => { const v = dict[el.dataset.i18nHtml]; if (v) el.innerHTML = v; });
+    document.querySelectorAll('[data-set-lang]').forEach(b => b.classList.toggle('on', b.dataset.setLang === lang));
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+  document.querySelectorAll('[data-set-lang]').forEach(b => b.addEventListener('click', () => setLang(b.dataset.setLang)));
+  try { const saved = localStorage.getItem('lang'); if (saved === 'en') setLang('en'); } catch (e) {}
+
+  const menu = document.getElementById('menu');
+  const toggle = open => { menu.classList.toggle('open', open); menu.setAttribute('aria-hidden', !open); document.body.style.overflow = open ? 'hidden' : ''; };
+  document.querySelectorAll('[data-menu-open]').forEach(b => b.addEventListener('click', () => toggle(true)));
+  document.querySelectorAll('[data-menu-close]').forEach(b => b.addEventListener('click', () => toggle(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') toggle(false); });
+
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
