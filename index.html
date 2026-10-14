@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Алексей Иванов — архитектор</title>
+<meta name="description" content="Алексей Иванов — архитектор. Проекты, подход к работе и контакты.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f4f0; --fg: #1c1b19; --muted: #6b675f; --line: #d9d4ca; --accent: #8a5a3b; --card: #ece8e0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #141412; --fg: #ece9e3; --muted: #9a958b; --line: #2e2c28; --accent: #c98e66; --card: #1d1c19; }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--fg); font: 300 17px/1.65 Inter, system-ui, sans-serif; }
+  a { color: inherit; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  header { position: sticky; top: 0; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); z-index: 10; }
+  nav { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+  .logo { font: 700 20px 'Playfair Display', serif; text-decoration: none; letter-spacing: .02em; }
+  nav ul { display: flex; gap: 28px; list-style: none; font-size: 15px; }
+  nav ul a { text-decoration: none; color: var(--muted); }
+  nav ul a:hover { color: var(--fg); }
+  .hero { padding: 120px 0 100px; border-bottom: 1px solid var(--line); }
+  .eyebrow { text-transform: uppercase; letter-spacing: .18em; font-size: 13px; color: var(--accent); font-weight: 600; }
+  h1 { font: 500 clamp(40px, 7vw, 84px)/1.05 'Playfair Display', serif; margin: 18px 0 28px; }
+  .hero p { max-width: 560px; color: var(--muted); font-size: 19px; }
+  .btn { display: inline-block; margin-top: 36px; padding: 14px 28px; border: 1px solid var(--fg); text-decoration: none; font-weight: 400; transition: .2s; }
+  .btn:hover { background: var(--fg); color: var(--bg); }
+  section { padding: 96px 0; border-bottom: 1px solid var(--line); }
+  h2 { font: 500 clamp(30px, 4vw, 44px)/1.15 'Playfair Display', serif; margin-bottom: 48px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 28px; }
+  .project .img { aspect-ratio: 4/3; background: var(--card); border: 1px solid var(--line); display: grid; place-items: center; color: var(--muted); font-size: 14px; position: relative; overflow: hidden; }
+  .project .img::before { content: ""; position: absolute; inset: 22% 18%; border: 1px solid var(--line); }
+  .project h3 { font: 600 18px Inter, sans-serif; margin-top: 16px; }
+  .project span { color: var(--muted); font-size: 14px; }
+  .about { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; }
+  .about p + p { margin-top: 18px; }
+  .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; border-top: 1px solid var(--line); }
+  .service { padding: 28px 24px 28px 0; border-bottom: 1px solid var(--line); }
+  .service b { display: block; font-weight: 600; margin-bottom: 6px; }
+  .service p { color: var(--muted); font-size: 15px; }
+  .contact p { font-size: 20px; }
+  .contact a { color: var(--accent); }
+  footer { padding: 32px 0; color: var(--muted); font-size: 14px; }
+  @media (max-width: 720px) {
+    nav ul { gap: 16px; font-size: 14px; }
+    .wrap { padding: 0 16px; }
+    .hero { padding: 72px 0 64px; }
+    section { padding: 64px 0; }
+    .about { grid-template-columns: 1fr; gap: 24px; }
+    .about h2 { margin-bottom: 0; }
+  }
+  @media (max-width: 420px) { nav ul li:nth-child(2) { display: none; } }
+</style>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a class="logo" href="#">А. Иванов</a>
+    <ul>
+      <li><a href="#projects">Проекты</a></li>
+      <li><a href="#about">Обо мне</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Архитектор</div>
+      <h1>Алексей Иванов</h1>
+      <p>Проектирую жилые и общественные пространства, где форма, свет и материал работают на людей, которые в них живут.</p>
+      <a class="btn" href="#projects">Смотреть проекты</a>
+    </div>
+  </div>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Избранные проекты</h2>
+      <div class="grid">
+        <article class="project"><div class="img">Фото проекта</div><h3>Название проекта</h3><span>Тип объекта · Город · Год</span></article>
+        <article class="project"><div class="img">Фото проекта</div><h3>Название проекта</h3><span>Тип объекта · Город · Год</span></article>
+        <article class="project"><div class="img">Фото проекта</div><h3>Название проекта</h3><span>Тип объекта · Город · Год</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <h2>Обо мне</h2>
+      <div>
+        <p>Здесь будет короткий рассказ о вас: образование, опыт, ключевые проекты и то, что для вас важно в архитектуре.</p>
+        <p>Опишите свой подход к работе: как вы начинаете проект, как работаете с заказчиком и что он получает в результате.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <h2>Услуги</h2>
+      <div class="services">
+        <div class="service"><b>Архитектурное проектирование</b><p>От концепции до рабочей документации.</p></div>
+        <div class="service"><b>Дизайн интерьера</b><p>Планировки, материалы, свет.</p></div>
+        <div class="service"><b>Авторский надзор</b><p>Сопровождение на стройке.</p></div>
+        <div class="service"><b>Консультации</b><p>Оценка участка и идеи.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Контакты</h2>
+      <p>Обсудим ваш проект: <a href="mailto:your@email.com">your@email.com</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="y">2026</span> Алексей Иванов</div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
