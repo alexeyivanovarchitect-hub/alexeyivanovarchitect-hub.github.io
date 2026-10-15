@@ -396,3 +396,14 @@ html.simple .jfig:not(.drawing) img { filter: grayscale(1); }
 .qr-card a:hover .qr, .qr-card a:focus-visible .qr { outline: 2px solid var(--signal); outline-offset: 3px; }
 .qr-title { font-size: 15px; line-height: 1.35; }
 @media (min-width: 1200px) { .qr-grid--brief { grid-template-columns: repeat(8, minmax(0, 1fr)); } }
+
+/* ---------- phone polish: compact header, readable e-mail, tighter footer ---------- */
+.lang { white-space: nowrap; }
+.site-footer .mail { text-transform: none; letter-spacing: .02em; font-size: 14px; overflow-wrap: anywhere; }
+@media (max-width: 719px) {
+  .site-header .wrap { min-height: 52px; gap: 14px; }
+  .site-header .logo { width: 100px; }
+  .site-header .lang { font-size: 11px; }
+  .site-header .menu-btn { min-height: 34px; padding: 0 12px; font-size: 11px; }
+  .site-footer { margin-top: 56px; }
+}
