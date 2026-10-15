@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{{SITE_ORIGIN}}/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/projects/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/about/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/contact/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/projects/manezh/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/projects/mountain-house/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/projects/divnoye/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/projects/level-multifunctional-complex/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/projects/art-quarter/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/projects/sminex-microdistrict/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/projects/beskudnikovsky-house-3/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/projects/dmitrovskoe-highway-70/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/projects/beskudnikovsky-house-5/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/projects/open-space-artemy-lebedev-studio/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/projects/open-space-alfabank/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/projects/sketchbook-travel/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/en/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/en/projects/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/en/about/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/en/contact/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/en/projects/manezh/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/en/projects/mountain-house/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/en/projects/divnoye/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/en/projects/level-multifunctional-complex/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/en/projects/art-quarter/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/en/projects/sminex-microdistrict/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/en/projects/beskudnikovsky-house-3/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/en/projects/dmitrovskoe-highway-70/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/en/projects/beskudnikovsky-house-5/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/en/projects/open-space-artemy-lebedev-studio/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/en/projects/open-space-alfabank/</loc></url>
+  <url><loc>{{SITE_ORIGIN}}/en/projects/sketchbook-travel/</loc></url>
+</urlset>
