@@ -538,3 +538,9 @@ html[data-theme="dark"] .pkg-card .pkg-matrix img { filter: invert(1); }
 .art-price { margin: 0; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
 .art-price .num { font-size: 22px; }
 .art-card .actions { margin-top: 4px; }
+/* art: one baseline per row, red only on the card in focus */
+.art-card .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.art-card .actions .btn { flex: 1 1 auto; }
+.art-card .actions .btn--signal { background: transparent; border-color: var(--ink); color: var(--ink); }
+.art-card:is(:hover, :focus-within) .actions .btn--signal { background: var(--signal); border-color: var(--signal); color: var(--signal-ink); }
+@media (min-width: 720px) { .art-title { min-height: 3.4em; } }
