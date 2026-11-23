@@ -1,9 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke-linecap="round" stroke-linejoin="round"><defs><filter id="w" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="11"/><feDisplacementMap in="SourceGraphic" scale="4.5"/></filter></defs>
-<g filter="url(#w)">
-<circle cx="32" cy="32" r="11" stroke="#151515" stroke-width="3"/><circle cx="28" cy="30" r="1.2" fill="#151515"/><circle cx="36" cy="30" r="1.2" fill="#151515"/><path d="M27 36c3 3 7 3 10 0" stroke="#151515" stroke-width="2"/>
-<path d="M32 43v32M32 75l-11 30M32 75l11 30M32 54l24 4M32 54l-15 12" stroke="#151515" stroke-width="3"/>
-<rect x="56" y="46" width="30" height="22" fill="#fde9a6" stroke="#d6281c" stroke-width="3"/><path d="M61 53h20M61 58h16M61 63h12" stroke="#2b5fb8" stroke-width="1.8"/>
-<circle cx="124" cy="34" r="11" stroke="#151515" stroke-width="3"/><path d="M111 26h26M114 26c0-12 20-12 20 0" stroke="#f2b705" stroke-width="3.5" fill="#fde9a6"/><circle cx="120" cy="34" r="1.2" fill="#151515"/><circle cx="128" cy="34" r="1.2" fill="#151515"/><path d="M119 40c3 3 7 3 10 0" stroke="#151515" stroke-width="2"/>
-<path d="M124 45v30M124 75l-11 30M124 75l11 30M124 55l-36 3M124 55l15 12" stroke="#151515" stroke-width="3"/>
-<path d="M10 112h140" stroke="#3a9a4a" stroke-width="2.6"/>
-</g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#151515" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="32" cy="32" r="9"/><path d="M32 41v34M32 75l-10 30M32 75l10 30M32 52l24 4M32 52l-14 12"/>
+<rect x="56" y="48" width="26" height="18" stroke="#d6281c" stroke-width="2"/><path d="M60 54h18M60 59h14" stroke="#d6281c" stroke-width="1.4"/>
+<circle cx="122" cy="32" r="9"/><path d="M111 25h22M114 25c0-9 16-9 16 0" stroke-width="2"/><path d="M122 41v34M122 75l-10 30M122 75l10 30M122 52l-26 4M122 52l14 12"/>
+</svg>
