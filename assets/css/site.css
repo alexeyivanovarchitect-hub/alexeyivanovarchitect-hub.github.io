@@ -407,3 +407,11 @@ html.simple .jfig:not(.drawing) img { filter: grayscale(1); }
   .site-header .menu-btn { min-height: 34px; padding: 0 12px; font-size: 11px; }
   .site-footer { margin-top: 56px; }
 }
+
+/* project videos */
+.hq-videos { display: grid; gap: calc(var(--gap) * 2); }
+.hq-video { margin: 0; display: grid; gap: 8px; }
+.hq-video video { display: block; width: 100%; height: auto; background: #000; max-width: 100%; }
+.hq-video video[style*="max-height"], .hq-videos--pair video { max-height: 85vh; width: auto; max-width: 100%; margin-inline: auto; }
+@media (min-width: 720px) { .hq-videos--pair { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; } }
+.hq-videos--pair figcaption { text-align: center; }
