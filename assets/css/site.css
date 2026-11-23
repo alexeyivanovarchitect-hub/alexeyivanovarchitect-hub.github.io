@@ -544,3 +544,5 @@ html[data-theme="dark"] .pkg-card .pkg-matrix img { filter: invert(1); }
 .art-card .actions .btn--signal { background: transparent; border-color: var(--ink); color: var(--ink); }
 .art-card:is(:hover, :focus-within) .actions .btn--signal { background: var(--signal); border-color: var(--signal); color: var(--signal-ink); }
 @media (min-width: 720px) { .art-title { min-height: 3.4em; } }
+/* art: show the whole work, never crop */
+.art-card figure img { aspect-ratio: 4 / 3; object-fit: contain; object-position: left bottom; background: transparent; }
