@@ -431,3 +431,16 @@ html.simple .jfig:not(.drawing) img { filter: grayscale(1); }
 .gains--featured { outline: 1px solid var(--signal); outline-offset: 0; padding: 12px 14px 4px; }
 .gains--featured::before { top: -22px; }
 @media (max-width: 719px) { .gains--featured { outline-offset: 0; margin-block: 28px 8px; } }
+.pkg-wrap { overflow-x: auto; margin-top: calc(var(--gap) * 2); }
+.pkg { border-collapse: collapse; width: 100%; min-width: 640px; margin-top: 12px; }
+.pkg th, .pkg td { padding: 14px 12px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; font-weight: 400; }
+.pkg thead th { font-size: var(--t-s); letter-spacing: var(--track); text-transform: uppercase; font-weight: 500; border-bottom: 1px solid var(--ink); }
+.pkg th small, .pkg td small { display: block; color: var(--muted); font-size: 13px; letter-spacing: normal; text-transform: none; }
+.pkg th b { font-weight: 500; }
+.pkg .c { text-align: center; width: 22%; }
+.pkg .f { background: color-mix(in srgb, var(--signal) 7%, transparent); }
+.pkg thead .f { color: var(--signal); }
+.terms { margin-top: calc(var(--gap) * 2); }
+.terms ul { margin: 8px 0 0; padding-left: 18px; color: var(--muted); }
+.terms li { padding-block: 4px; }
+.rub { display: block; font-size: 13px; color: var(--muted); letter-spacing: normal; }
