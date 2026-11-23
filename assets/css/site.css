@@ -460,3 +460,17 @@ html[data-theme="dark"] .pkg-ill img, html[data-theme="dark"] .pkg-icons { mix-b
 .pkg-icons[src*="ico-picture"] { max-width: 280px; }
 .pkg-icons[src*="ico-idea"] { max-width: 400px; }
 .pkg-icons[src*="ico-instructions"] { max-width: 380px; }
+/* Brockmann: one module for all packages */
+.gains > .pkg-ill { min-height: 250px; align-content: end; }
+.gains > .label { min-height: 3em; margin: 0; }
+.pkg-count { min-height: 2.6em; }
+.pkg-tag { margin: 0 0 10px; font-size: 14px; min-height: 1.4em; }
+.pkg-matrix { list-style: none; margin: 0 0 12px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px 8px; border: 0 !important; }
+.pkg-matrix li { display: grid !important; grid-template-columns: none !important; gap: 4px !important; padding: 0 !important; border: 0 !important; justify-items: start; font-size: 12px; }
+.pkg-matrix li::before { content: none !important; }
+.pkg-matrix img { width: 28px; height: 28px; }
+.pkg-matrix .off { opacity: .22; }
+.gains:not(.gains--featured) > ul:not(.pkg-matrix) li::before { color: var(--muted); }
+.pkg-bar, .pkg-sub, .pkg-icons { display: none; }
+html[data-theme="dark"] .pkg-matrix img { filter: invert(1); }
+.s-4.gains { padding: 12px 14px 4px; }
