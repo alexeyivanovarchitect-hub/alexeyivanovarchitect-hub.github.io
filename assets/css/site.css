@@ -415,3 +415,4 @@ html.simple .jfig:not(.drawing) img { filter: grayscale(1); }
 .hq-video video[style*="max-height"], .hq-videos--pair video { max-height: 85vh; width: auto; max-width: 100%; margin-inline: auto; }
 @media (min-width: 720px) { .hq-videos--pair { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; } }
 .hq-videos--pair figcaption { text-align: center; }
+@media (min-width: 900px) { .hq-videos--trio { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
