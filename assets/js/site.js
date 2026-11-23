@@ -167,12 +167,12 @@ function L(ru, en) { return EN_UI ? en : ru; }
 
 (function () {
   Array.prototype.forEach.call(document.querySelectorAll('[data-calc]'), function (box) {
-    var inp = box.querySelector('input'), out = box.querySelector('[data-calc-out]'), out2 = box.querySelector('[data-calc-out2]');
+    var inp = box.querySelector('input'), out = box.querySelector('[data-calc-out]'), out2 = box.querySelector('[data-calc-out2]'), out3 = box.querySelector('[data-calc-out3]'), rate3 = parseFloat(box.getAttribute('data-rate3')) || 0;
     var rate = parseFloat(box.getAttribute('data-rate')) || 10, rate2 = parseFloat(box.getAttribute('data-rate2')) || 0, en = box.getAttribute('data-lang') === 'en';
     function fmt(a, r) { var sum = (a * r).toLocaleString(en ? 'en-US' : 'ru-RU'); return a ? (en ? 'from $' + sum : 'от ' + sum + ' $') : (en ? 'from $' + r + '/m²' : 'от ' + r + ' $/м²'); }
     function upd() {
       var a = Math.max(0, Math.round(parseFloat(inp.value) || 0));
-      out.textContent = fmt(a, rate); if (out2 && rate2) out2.textContent = fmt(a, rate2);
+      out.textContent = fmt(a, rate); if (out2 && rate2) out2.textContent = fmt(a, rate2); if (out3 && rate3) out3.textContent = fmt(a, rate3);
     }
     inp.addEventListener('input', upd); upd();
   });

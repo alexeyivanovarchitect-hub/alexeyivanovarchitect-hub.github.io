@@ -423,3 +423,11 @@ html.simple .jfig:not(.drawing) img { filter: grayscale(1); }
 .hero .hero-title { font-size: var(--t-l); }
 .social-row { padding-block: calc(var(--gap)*2); }
 .gains { align-content: start; }
+.gains--featured { position: relative; outline: 1px solid var(--signal); outline-offset: 12px; }
+.gains--featured::before { content: attr(data-badge); position: absolute; top: -26px; right: 0; font-size: var(--t-s); letter-spacing: var(--track); text-transform: uppercase; color: var(--signal); }
+.calc-out--featured .label, .calc-out--featured .price-val { color: var(--signal); }
+@media (max-width: 719px) { .gains--featured { outline-offset: 8px; margin-block: 24px; } }
+.gains { align-self: start; }
+.gains--featured { outline: 1px solid var(--signal); outline-offset: 0; padding: 12px 14px 4px; }
+.gains--featured::before { top: -22px; }
+@media (max-width: 719px) { .gains--featured { outline-offset: 0; margin-block: 28px 8px; } }
