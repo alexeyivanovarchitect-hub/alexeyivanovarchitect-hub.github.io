@@ -160,3 +160,15 @@ function L(ru, en) { return EN_UI ? en : ru; }
   box.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
   box.addEventListener('touchend', function (e) { if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1)); x0 = null; });
 })();
+
+(function () {
+  Array.prototype.forEach.call(document.querySelectorAll('[data-calc]'), function (box) {
+    var inp = box.querySelector('input'), out = box.querySelector('[data-calc-out]');
+    var rate = parseFloat(box.getAttribute('data-rate')) || 10, en = box.getAttribute('data-lang') === 'en';
+    function upd() {
+      var a = Math.max(0, Math.round(parseFloat(inp.value) || 0)), sum = (a * rate).toLocaleString(en ? 'en-US' : 'ru-RU');
+      out.textContent = a ? (en ? 'from $' + sum : 'от ' + sum + ' $') : (en ? 'from $10/m²' : 'от 10 $/м²');
+    }
+    inp.addEventListener('input', upd); upd();
+  });
+})();

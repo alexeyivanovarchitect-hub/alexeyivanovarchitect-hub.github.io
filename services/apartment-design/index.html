@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&amp;display=swap">
-<link rel="stylesheet" href="../../assets/css/site.css?v=20261123b">
+<link rel="stylesheet" href="../../assets/css/site.css?v=20261123c">
 <script>try{var t=localStorage.getItem('ai-theme');if(t)document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('ai-simple')==='1')document.documentElement.classList.add('simple')}catch(e){}</script>
 </head>
 <body>
@@ -35,6 +35,11 @@
     <p class="lead s-6">Полный комплект чертежей и визуализаций. По нему подрядчик делает ремонт без догадок, а вы заранее видите свой дом таким, каким он будет.</p>
     <div class="s-6 price" style="align-self:end">
       <p><span class="price-val num">от 10 $/м²</span></p>
+      <p class="muted">Срок около 4 недель для квартиры 60 м².</p>
+      <div class="calc" data-calc data-rate="10" data-lang="ru">
+      <div class="field"><label for="calc-area-s">Площадь квартиры, м²</label><input id="calc-area-s" type="number" inputmode="numeric" min="10" max="1000" step="1" value="60"></div>
+      <p class="calc-out"><span class="label muted">Стоимость</span><span class="price-val num" data-calc-out>от 600 $</span></p>
+    </div>
       <p class="muted">Точная стоимость зависит от количества вариантов концепции, глубины проработки интерьера и сложности решений, мебели по индивидуальным эскизам, сценариев освещения, авторских деталей и малых архитектурных форм.</p>
     </div>
     <div class="actions s-12">
@@ -158,6 +163,6 @@
     </div>
   </div>
 </footer>
-<script src="../../assets/js/site.js?v=20261123b" defer></script>
+<script src="../../assets/js/site.js?v=20261123c" defer></script>
 </body>
 </html>
