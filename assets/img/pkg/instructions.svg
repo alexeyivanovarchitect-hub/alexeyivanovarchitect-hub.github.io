@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#151515" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><defs><filter id="w" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="11"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter></defs>
+<g filter="url(#w)">
+<circle cx="32" cy="32" r="10"/><path d="M28 35c2 2 6 2 8 0" stroke-width="2"/>
+<path d="M32 42v33M32 75l-11 30M32 75l11 30M32 53l24 4M32 53l-15 12"/>
+<rect x="56" y="46" width="30" height="22" stroke="#d6281c" stroke-width="3"/>
+<circle cx="124" cy="34" r="10"/><path d="M112 26h24M115 26c0-11 18-11 18 0"/><path d="M120 37c2 2 6 2 8 0" stroke-width="2"/>
+<path d="M124 44v31M124 75l-11 30M124 75l11 30M124 55l-38 2M124 55l15 12"/>
+</g></svg>

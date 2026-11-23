@@ -431,3 +431,79 @@ html.simple .jfig:not(.drawing) img { filter: grayscale(1); }
 .gains--featured { outline: 1px solid var(--signal); outline-offset: 0; padding: 12px 14px 4px; }
 .gains--featured::before { top: -22px; }
 @media (max-width: 719px) { .gains--featured { outline-offset: 0; margin-block: 28px 8px; } }
+.pkg-wrap { overflow-x: auto; margin-top: calc(var(--gap) * 2); }
+.pkg { border-collapse: collapse; width: 100%; min-width: 640px; margin-top: 12px; }
+.pkg th, .pkg td { padding: 14px 12px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; font-weight: 400; }
+.pkg thead th { font-size: var(--t-s); letter-spacing: var(--track); text-transform: uppercase; font-weight: 500; border-bottom: 1px solid var(--ink); }
+.pkg th small, .pkg td small { display: block; color: var(--muted); font-size: 13px; letter-spacing: normal; text-transform: none; }
+.pkg th b { font-weight: 500; }
+.pkg .c { text-align: center; width: 22%; }
+.pkg .f { background: color-mix(in srgb, var(--signal) 7%, transparent); }
+.pkg thead .f { color: var(--signal); }
+.terms { margin-top: calc(var(--gap) * 2); }
+.terms ul { margin: 8px 0 0; padding-left: 18px; color: var(--muted); }
+.terms li { padding-block: 4px; }
+.rub { display: block; font-size: 13px; color: var(--muted); letter-spacing: normal; }
+.pkg-ill { margin: 0 0 8px; display: grid; gap: 4px; }
+.pkg-ill img { width: 160px; height: auto; }
+html[data-theme="dark"] .pkg-ill img { filter: invert(1) hue-rotate(180deg); }
+.pkg-count { margin: 0 0 6px; font-size: 20px; font-weight: 300; line-height: 1.3; }
+.pkg-note { font-size: 13px; margin: 8px 0 0; }
+.pkg-ill img { width: 100%; max-width: 300px; height: auto; mix-blend-mode: multiply; }
+.pkg-ill figcaption { color: var(--ink); font-weight: 500; }
+.pkg-bar { margin: 6px 0 4px; padding: 10px 14px; background: color-mix(in srgb, var(--ink) 6%, transparent); font-size: 18px; }
+.gains--featured .pkg-bar { background: color-mix(in srgb, var(--signal) 10%, transparent); }
+.pkg-bar__a { color: var(--signal); }
+.pkg-sub { font-size: 13px; margin: 0 0 6px; }
+.pkg-icons { display: block; width: 100%; max-width: 420px; height: auto; margin: 8px 0 10px; mix-blend-mode: multiply; }
+html[data-theme="dark"] .pkg-ill img, html[data-theme="dark"] .pkg-icons { mix-blend-mode: normal; background: #fff; border-radius: 8px; }
+.pkg-icons[src*="ico-picture"] { max-width: 280px; }
+.pkg-icons[src*="ico-idea"] { max-width: 400px; }
+.pkg-icons[src*="ico-instructions"] { max-width: 380px; }
+/* Brockmann: one module for all packages */
+.gains > .pkg-ill { min-height: 250px; align-content: end; }
+.gains > .label { min-height: 3em; margin: 0; }
+.pkg-count { min-height: 2.6em; }
+.pkg-tag { margin: 0 0 10px; font-size: 14px; min-height: 1.4em; }
+.pkg-matrix { list-style: none; margin: 0 0 12px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px 8px; border: 0 !important; }
+.pkg-matrix li { display: grid !important; grid-template-columns: none !important; gap: 4px !important; padding: 0 !important; border: 0 !important; justify-items: start; font-size: 12px; }
+.pkg-matrix li::before { content: none !important; }
+.pkg-matrix img { width: 34px; height: 34px; }
+.pkg-matrix .off { opacity: .22; }
+.gains:not(.gains--featured) > ul:not(.pkg-matrix) li::before { color: var(--muted); }
+.pkg-bar, .pkg-sub, .pkg-icons { display: none; }
+html[data-theme="dark"] .pkg-matrix img { filter: invert(1); }
+.s-4.gains { padding: 12px 14px 4px; }
+/* package cards v2: one grid, shared baselines */
+.pkg-card { display: flex; flex-direction: column; padding: 16px 18px 18px !important; }
+.pkg-card .pkg-ill { min-height: 0; margin: 0 0 6px; }
+.pkg-card .pkg-ill img { max-width: 260px; height: 130px; width: auto; object-fit: contain; object-position: left bottom; }
+.pkg-name { font-size: 34px; font-weight: 500; text-transform: uppercase; letter-spacing: .02em; margin: 6px 0 0; line-height: 1.05; }
+.pkg-subt { margin: 4px 0 12px; font-size: 18px; min-height: 2.6em; }
+.pkg-meta { margin: 0; padding-block: 10px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); min-height: 3.4em; display: flex; align-items: center; }
+.pkg-card .pkg-count { margin: 12px 0; font-size: 18px; line-height: 1.3; min-height: 4em; }
+.pkg-card .pkg-count b { font-size: 24px; font-weight: 500; }
+.pkg-card .pkg-tag { margin: 0 0 10px; padding-top: 10px; border-top: 1px solid var(--line); font-size: 14px; font-weight: 500; color: var(--ink); min-height: 2.8em; }
+.pkg-card .pkg-matrix .off { visibility: hidden; }
+.pkg-card .pkg-matrix { margin-bottom: 14px; }
+.pkg-list { list-style: none; margin: 0; padding: 12px 0 0; border-top: 1px solid var(--line); flex: 1; }
+.pkg-list li { position: relative; padding: 5px 0 5px 24px; font-size: 15px; line-height: 1.35; border: 0 !important; display: block !important; }
+.pkg-list li::before { content: "✓" !important; position: absolute; left: 0; top: 5px; color: var(--ink); font-weight: 500; }
+.gains--featured .pkg-list li::before { color: var(--signal); }
+.pkg-card .pkg-note { font-size: 13px; margin: 10px 0 0; }
+.pkg-btn { margin: 16px 0 0; }
+.pkg-btn .btn { width: 100%; justify-content: center; text-align: center; }
+@media (max-width: 719px) { .pkg-subt, .pkg-meta, .pkg-card .pkg-count, .pkg-card .pkg-tag { min-height: 0; } .pkg-card .pkg-matrix .off { display: none; } }
+.s-4.gains.pkg-card { align-self: stretch; }
+@media (min-width: 720px) {
+  .pkg-subt { height: 2.8em; overflow: visible; }
+  .pkg-meta { height: 3.6em; box-sizing: border-box; }
+  .pkg-card .pkg-count { height: 4.4em; }
+  .pkg-card .pkg-tag { height: 3.4em; box-sizing: border-box; }
+}
+.pkg-card .pkg-ill img { height: auto !important; max-width: 100%; object-fit: initial; }
+.pkg-card .pkg-ill { min-height: 140px; display: flex; align-items: flex-end; }
+/* Brockmann: figures share one baseline, flush left, cut by a hairline */
+.pkg-card .pkg-ill { min-height: 0; height: 128px; align-items: flex-end; justify-content: flex-start; border-bottom: 1px solid var(--ink); margin: 0 0 14px; overflow: hidden; }
+.pkg-card .pkg-ill img { display: block; }
+.pkg-card .pkg-ill { border-bottom: 0; }
