@@ -200,3 +200,16 @@ function L(ru, en) { return EN_UI ? en : ru; }
     });
   });
 })();
+
+/* --- art catalogue filter --- */
+(function () {
+  var grid = document.querySelector('[data-art]'); if (!grid) return;
+  var btns = document.querySelectorAll('[data-art-filter]');
+  Array.prototype.forEach.call(btns, function (b) {
+    b.addEventListener('click', function () {
+      var f = b.getAttribute('data-art-filter');
+      Array.prototype.forEach.call(btns, function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      Array.prototype.forEach.call(grid.children, function (li) { li.hidden = f !== 'all' && li.getAttribute('data-type') !== f; });
+    });
+  });
+})();
