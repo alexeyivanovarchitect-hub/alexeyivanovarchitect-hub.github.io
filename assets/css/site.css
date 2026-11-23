@@ -446,5 +446,5 @@ html.simple .jfig:not(.drawing) img { filter: grayscale(1); }
 .rub { display: block; font-size: 13px; color: var(--muted); letter-spacing: normal; }
 .pkg-ill { margin: 0 0 8px; display: grid; gap: 4px; }
 .pkg-ill img { width: 160px; height: auto; }
-html[data-theme="dark"] .pkg-ill img { filter: invert(1) hue-rotate(180deg); }
+html[data-theme="dark"] .pkg-ill img { background: #f6f6f4; border-radius: 8px; }
 .pkg-count { margin: 0 0 6px; font-size: 22px; font-weight: 300; }
