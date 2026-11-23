@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#151515" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-<rect x="70" y="58" width="72" height="50" stroke-width="1.6"/><path d="M70 82h30M100 58v24M120 82v26M100 96h20" stroke-width="1.6"/>
-<circle cx="34" cy="30" r="9"/><path d="M34 39v36M34 75l-10 30M34 75l10 30M34 50l20 14M34 50l-16 12"/>
-<path d="M54 64l14 6" stroke="#d6281c" stroke-width="2.6"/>
-<path d="M44 14c4-6 12-6 14 0" stroke="#d6281c"/><circle cx="51" cy="8" r="0.5" fill="#d6281c"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" fill="none" stroke="#151515" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><defs><filter id="w" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter></defs>
+<g filter="url(#w)">
+<circle cx="34" cy="30" r="10"/><path d="M30 33c2 2 6 2 8 0" stroke-width="2"/>
+<path d="M34 40v35M34 75l-11 30M34 75l11 30M34 52l22 12M34 52l-16 10"/>
+<rect x="72" y="58" width="68" height="48"/><path d="M72 82h28M100 58v24"/>
+<path d="M56 64l14 6" stroke="#d6281c" stroke-width="3.6"/>
+</g></svg>
