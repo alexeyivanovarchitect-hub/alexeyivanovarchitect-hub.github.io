@@ -506,3 +506,4 @@ html[data-theme="dark"] .pkg-matrix img { filter: invert(1); }
 /* Brockmann: figures share one baseline, flush left, cut by a hairline */
 .pkg-card .pkg-ill { min-height: 0; height: 128px; align-items: flex-end; justify-content: flex-start; border-bottom: 1px solid var(--ink); margin: 0 0 14px; overflow: hidden; }
 .pkg-card .pkg-ill img { display: block; }
+.pkg-card .pkg-ill { border-bottom: 0; }
