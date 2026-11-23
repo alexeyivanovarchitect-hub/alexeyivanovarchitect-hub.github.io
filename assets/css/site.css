@@ -501,3 +501,5 @@ html[data-theme="dark"] .pkg-matrix img { filter: invert(1); }
   .pkg-card .pkg-count { height: 4.4em; }
   .pkg-card .pkg-tag { height: 3.4em; box-sizing: border-box; }
 }
+.pkg-card .pkg-ill img { height: auto !important; max-width: 100%; object-fit: initial; }
+.pkg-card .pkg-ill { min-height: 140px; display: flex; align-items: flex-end; }
