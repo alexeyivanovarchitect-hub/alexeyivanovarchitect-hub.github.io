@@ -116,6 +116,8 @@ function L(ru, en) { return EN_UI ? en : ru; }
       ].join('\n');
       out.textContent = text;
       after.hidden = false;
+      var wa = document.getElementById('brief-wa');
+      if (wa) wa.href = 'https://wa.me/79175704682?text=' + encodeURIComponent(text);
       mail.href = 'mailto:alexeyivanovarchitect@gmail.com?subject=' + encodeURIComponent(L('Заявка на проект','Project request')) + '&body=' + encodeURIComponent(text);
       after.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
