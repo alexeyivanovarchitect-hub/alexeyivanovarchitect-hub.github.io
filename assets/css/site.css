@@ -420,3 +420,4 @@ html.simple .jfig:not(.drawing) img { filter: grayscale(1); }
 .calc .field input { font-size: var(--t-m, 18px); }
 .calc-out { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 0; }
 .calc-out .price-val { font-size: var(--t-l, 28px); }
+.hero .hero-title { font-size: var(--t-l); }
