@@ -181,3 +181,12 @@ function L(ru, en) { return EN_UI ? en : ru; }
     inp.addEventListener('input', upd); upd();
   });
 })();
+
+/* --- package chosen on the service page prefills the brief --- */
+(function () {
+  var form = document.getElementById('brief-form'); if (!form) return;
+  var m = /[?&]pkg=([^&#]+)/.exec(location.search); if (!m) return;
+  var pkg = decodeURIComponent(m[1]), en = document.documentElement.lang === 'en';
+  var t = form.querySelector('input[name="type"][value="' + (en ? 'Apartment' : 'Квартира') + '"]'); if (t) t.checked = true;
+  var task = form.elements['task']; if (task && !task.value) task.value = (en ? 'Package ' + pkg + '. ' : 'Пакет «' + pkg + '». ');
+})();
