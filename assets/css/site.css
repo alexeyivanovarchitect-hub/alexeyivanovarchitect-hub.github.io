@@ -546,3 +546,13 @@ html[data-theme="dark"] .pkg-card .pkg-matrix img { filter: invert(1); }
 @media (min-width: 720px) { .art-title { min-height: 3.4em; } }
 /* art: show the whole work, never crop */
 .art-card figure img { aspect-ratio: 4 / 3; object-fit: contain; object-position: left bottom; background: transparent; }
+.art-ask { margin: 8px 0 0; }
+.art-card .actions { flex-wrap: nowrap; margin-top: 6px; }
+.art-card .actions .btn { flex: 1 1 0; padding-inline: 8px; }
+/* art: every row of cards shares one set of baselines */
+@supports (grid-template-rows: subgrid) {
+  .art-grid { row-gap: 0; }
+  .art-card { grid-template-rows: subgrid; grid-row: span 6; row-gap: 6px; padding-bottom: calc(var(--gap) * 2); }
+  .art-card figure { align-self: end; }
+  .art-title { min-height: 0 !important; }
+}
