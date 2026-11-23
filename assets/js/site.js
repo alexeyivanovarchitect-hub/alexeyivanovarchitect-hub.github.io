@@ -170,14 +170,10 @@ function L(ru, en) { return EN_UI ? en : ru; }
     var inp = box.querySelector('input'), out = box.querySelector('[data-calc-out]'), out2 = box.querySelector('[data-calc-out2]'), out3 = box.querySelector('[data-calc-out3]'), rate3 = parseFloat(box.getAttribute('data-rate3')) || 0;
     var rate = parseFloat(box.getAttribute('data-rate')) || 10, rate2 = parseFloat(box.getAttribute('data-rate2')) || 0, en = box.getAttribute('data-lang') === 'en';
     function fmt(a, r) { var sum = Math.round(a * r).toLocaleString(en ? 'en-US' : 'ru-RU'), rr = r.toLocaleString(en ? 'en-US' : 'ru-RU'); return a ? (en ? 'from $' + sum : 'от ' + sum + ' $') : (en ? 'from $' + rr + '/m²' : 'от ' + rr + ' $/м²'); }
-    var rub = 83;
-    function rubTxt(a, r) { return a && !en ? '<span class="rub">≈ ' + (Math.round(a * r * rub / 100) * 100).toLocaleString('ru-RU') + ' ₽</span>' : ''; }
-    function put(el, a, r) { if (el && r) el.innerHTML = fmt(a, r) + rubTxt(a, r); }
     function upd() {
       var a = Math.max(0, Math.round(parseFloat(inp.value) || 0));
-      put(out, a, rate); put(out2, a, rate2); put(out3, a, rate3);
+      out.textContent = fmt(a, rate); if (out2 && rate2) out2.textContent = fmt(a, rate2); if (out3 && rate3) out3.textContent = fmt(a, rate3);
     }
-    if (!en && window.fetch) fetch('https://www.cbr-xml-daily.ru/daily_json.js').then(function (r) { return r.json(); }).then(function (d) { if (d && d.Valute && d.Valute.USD) { rub = d.Valute.USD.Value; upd(); } }).catch(function () {});
     inp.addEventListener('input', upd); upd();
   });
 })();
