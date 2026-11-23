@@ -515,3 +515,14 @@ html[data-theme="dark"] .pkg-card .pkg-matrix img { filter: invert(1); }
   html:not([data-theme="light"]) .pkg-card .pkg-matrix img { filter: invert(1); }
 }
 @media (max-width: 719px) { .pkg-card .pkg-matrix { grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); } }
+/* pkg: highlight on hover or tap, featured is only the default */
+.pkg-card { outline: 1px solid transparent; outline-offset: 0; padding: 12px 14px 4px; transition: outline-color .2s; cursor: pointer; }
+@media (max-width: 719px) { .pkg-card { margin-block: 28px 8px; } }
+.gains.pkg-card.gains--featured { outline-color: var(--signal); }
+.gains.pkg-card:is(:hover, .is-active) { outline-color: var(--signal); }
+.gains.pkg-card:is(:hover, .is-active) > ul.pkg-list li::before { color: var(--signal); }
+.pkg-card:is(:hover, .is-active) .pkg-btn .btn { background: var(--signal); border-color: var(--signal); color: var(--signal-ink); }
+.pkg-card:is(:hover, .is-active) .pkg-btn .btn:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+:has(> .pkg-card:is(:hover, .is-active)) > .gains.pkg-card.gains--featured:not(:hover):not(.is-active) { outline-color: transparent; }
+:has(> .pkg-card:is(:hover, .is-active)) > .gains.pkg-card.gains--featured:not(:hover):not(.is-active) > ul.pkg-list li::before { color: var(--muted); }
+:has(> .pkg-card:is(:hover, .is-active)) > .gains--featured:not(:hover):not(.is-active) .pkg-btn .btn { background: transparent; border-color: var(--ink); color: var(--ink); }

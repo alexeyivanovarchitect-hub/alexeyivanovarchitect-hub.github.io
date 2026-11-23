@@ -190,3 +190,13 @@ function L(ru, en) { return EN_UI ? en : ru; }
   var t = form.querySelector('input[name="type"][value="' + (en ? 'Apartment' : 'Квартира') + '"]'); if (t) t.checked = true;
   var task = form.elements['task']; if (task && !task.value) task.value = (en ? 'Package ' + pkg + '. ' : 'Пакет «' + pkg + '». ');
 })();
+
+/* package cards: tap or click highlights the card */
+(function () {
+  var cards = document.querySelectorAll('.pkg-card');
+  cards.forEach(function (c) {
+    c.addEventListener('click', function () {
+      cards.forEach(function (o) { o.classList.toggle('is-active', o === c); });
+    });
+  });
+})();
