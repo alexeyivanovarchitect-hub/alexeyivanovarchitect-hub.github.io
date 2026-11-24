@@ -213,3 +213,17 @@ function L(ru, en) { return EN_UI ? en : ru; }
     });
   });
 })();
+
+/* --- art: ruble prices by the Central Bank of Russia rate --- */
+(function () {
+  var spans = document.querySelectorAll('[data-usd]'); if (!spans.length || !window.fetch) return;
+  fetch('https://www.cbr-xml-daily.ru/daily_json.js').then(function (r) { return r.json(); }).then(function (d) {
+    var rate = d && d.Valute && d.Valute.USD && d.Valute.USD.Value; if (!rate) return;
+    Array.prototype.forEach.call(spans, function (s) {
+      var v = Math.round(parseFloat(s.getAttribute('data-usd')) * rate / 10) * 10;
+      s.textContent = '≈ ' + v.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽';
+    });
+    var dt = new Date(d.Date), el = document.querySelector('[data-rub-date]');
+    if (el && !isNaN(dt)) el.textContent = ('0' + dt.getDate()).slice(-2) + '.' + ('0' + (dt.getMonth() + 1)).slice(-2) + '.' + dt.getFullYear();
+  }).catch(function () {});
+})();

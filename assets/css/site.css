@@ -569,3 +569,5 @@ html[data-theme="dark"] .pkg-card .pkg-matrix img { filter: invert(1); }
 .art-card .actions .btn--signal,
 .art-card:is(:hover, :focus-within) .actions .btn--signal { flex: 0 0 auto; min-height: 0; padding: 2px 0; background: none; border: 0; border-radius: 0; color: var(--muted); font-size: 13px; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
 .art-card .actions .btn:is(:hover, :focus-visible) { color: var(--signal); background: none; }
+/* art: ruble price next to dollars */
+.art-price .art-rub { font-size: 12px; letter-spacing: .04em; text-transform: none; }
