@@ -209,7 +209,12 @@ function L(ru, en) { return EN_UI ? en : ru; }
     b.addEventListener('click', function () {
       var f = b.getAttribute('data-art-filter');
       Array.prototype.forEach.call(btns, function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-      Array.prototype.forEach.call(grid.children, function (li) { li.hidden = f !== 'all' && li.getAttribute('data-type') !== f; });
+      var head = null, seen = false;
+      Array.prototype.forEach.call(grid.children, function (li) {
+        if (li.classList.contains('art-group')) { if (head) head.hidden = !seen; head = li; seen = false; return; }
+        li.hidden = f !== 'all' && li.getAttribute('data-type') !== f; if (!li.hidden) seen = true;
+      });
+      if (head) head.hidden = !seen;
     });
   });
 })();

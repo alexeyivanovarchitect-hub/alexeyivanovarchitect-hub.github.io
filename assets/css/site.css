@@ -571,3 +571,10 @@ html[data-theme="dark"] .pkg-card .pkg-matrix img { filter: invert(1); }
 .art-card .actions .btn:is(:hover, :focus-visible) { color: var(--signal); background: none; }
 /* art: ruble price next to dollars */
 .art-price .art-rub { font-size: 12px; letter-spacing: .04em; text-transform: none; }
+/* art: place groups with a short story before the works */
+.art-group { grid-column: 1 / -1; padding: calc(var(--gap) * 2) 0 var(--gap); border-top: 1px solid var(--line, #e6e6e2); margin-top: var(--gap); max-width: 900px; }
+.art-group:first-child { border-top: 0; margin-top: 0; padding-top: 0; }
+.art-group-title { margin: 0 0 10px; font-size: var(--t-l, 28px); font-weight: 400; }
+.art-group-text { margin: 0 0 10px; line-height: 1.55; }
+.art-group-haiku { margin: 0; }
+.art-group[hidden] { display: none; }
