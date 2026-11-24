@@ -225,7 +225,7 @@ function L(ru, en) { return EN_UI ? en : ru; }
   fetch('https://www.cbr-xml-daily.ru/daily_json.js').then(function (r) { return r.json(); }).then(function (d) {
     var rate = d && d.Valute && d.Valute.USD && d.Valute.USD.Value; if (!rate) return;
     Array.prototype.forEach.call(spans, function (s) {
-      var v = Math.round(parseFloat(s.getAttribute('data-usd')) * rate / 10) * 10;
+      var v = Math.round(parseFloat(s.getAttribute('data-usd')) * rate / 100) * 100;
       s.textContent = '≈ ' + v.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽';
     });
     var dt = new Date(d.Date), el = document.querySelector('[data-rub-date]');
