@@ -558,3 +558,7 @@ html[data-theme="dark"] .pkg-card .pkg-matrix img { filter: invert(1); }
 }
 .art-route-text p { margin: 0 0 14px; }
 .art-note { display: block; margin-top: 4px; text-transform: none; letter-spacing: 0; font-weight: 400; line-height: 1.4; }
+/* art: haiku description under the title */
+.art-haiku { margin: 2px 0 6px; font-size: 15px; line-height: 1.45; font-style: italic; color: var(--ink); opacity: .85; }
+.art-haiku .art-place { display: block; font-style: normal; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+@supports (grid-template-rows: subgrid) { .art-card { grid-row: span 7; } }
