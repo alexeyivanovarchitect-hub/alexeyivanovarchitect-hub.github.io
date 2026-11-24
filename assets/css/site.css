@@ -556,3 +556,7 @@ html[data-theme="dark"] .pkg-card .pkg-matrix img { filter: invert(1); }
   .art-card figure { align-self: end; }
   .art-title { min-height: 0 !important; }
 }
+/* art: natural proportions, no empty frames; each row shares one baseline */
+.art-card figure img { aspect-ratio: auto; height: auto; width: 100%; object-fit: initial; }
+/* art: one 3:2 frame for every work, whole work visible, bottom-left aligned */
+.art-card figure img { aspect-ratio: 3 / 2; width: 100%; height: auto; object-fit: contain; object-position: left bottom; }
