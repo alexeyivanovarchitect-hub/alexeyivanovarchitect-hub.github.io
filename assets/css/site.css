@@ -578,3 +578,8 @@ html[data-theme="dark"] .pkg-card .pkg-matrix img { filter: invert(1); }
 .art-group-text { margin: 0 0 10px; line-height: 1.55; }
 .art-group-haiku { margin: 0; }
 .art-group[hidden] { display: none; }
+/* art: quick links to places */
+.art-places { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 0 0 calc(var(--gap) * 2); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.art-places a { color: var(--muted); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.art-places a:hover, .art-places a:focus-visible { color: var(--signal); }
+.art-group { scroll-margin-top: 90px; }
