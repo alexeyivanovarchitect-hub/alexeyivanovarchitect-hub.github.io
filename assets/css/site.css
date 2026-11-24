@@ -583,3 +583,17 @@ html[data-theme="dark"] .pkg-card .pkg-matrix img { filter: invert(1); }
 .art-places a { color: var(--muted); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
 .art-places a:hover, .art-places a:focus-visible { color: var(--signal); }
 .art-group { scroll-margin-top: 90px; }
+/* art: quiet link to the sketchbook video */
+.art-sb { color: inherit; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; white-space: nowrap; }
+.art-sb:hover, .art-sb:focus-visible { color: var(--signal); }
+/* art: small translucent badge in the bottom right corner of the frame */
+.art-card figure { position: relative; }
+.art-sb-badge { position: absolute; right: 8px; bottom: 8px; padding: 4px 8px; font-size: 11px; letter-spacing: .06em; line-height: 1; color: #fff; background: rgba(20,20,20,.45); border-radius: 2px; text-decoration: none; opacity: .75; transition: opacity .2s, background .2s; -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px); }
+.art-sb-badge:hover, .art-sb-badge:focus-visible { opacity: 1; background: var(--signal); }
+.art-sb-badge { width: 26px; height: 26px; padding: 0; display: grid; place-items: center; font-size: 11px; border-radius: 50%; }
+/* art: sketchbook video window */
+.sb-modal { position: fixed; inset: 0; z-index: 1000; background: rgba(10,10,10,.88); display: grid; place-items: center; padding: 16px; }
+.sb-modal[hidden] { display: none; }
+.sb-modal video { max-height: 88vh; max-width: 100%; width: auto; background: #000; }
+.sb-close { position: absolute; top: 10px; right: 14px; width: 40px; height: 40px; font-size: 28px; line-height: 1; color: #fff; background: none; border: 0; cursor: pointer; }
+.sb-close:hover, .sb-close:focus-visible { color: var(--signal); }

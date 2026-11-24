@@ -232,3 +232,42 @@ function L(ru, en) { return EN_UI ? en : ru; }
     if (el && !isNaN(dt)) el.textContent = ('0' + dt.getDate()).slice(-2) + '.' + ('0' + (dt.getMonth() + 1)).slice(-2) + '.' + dt.getFullYear();
   }).catch(function () {});
 })();
+
+/* --- art: keep the sketchbook badge on the drawing's own bottom right corner --- */
+(function () {
+  var badges = document.querySelectorAll('.art-sb-badge'); if (!badges.length) return;
+  function place() {
+    Array.prototype.forEach.call(badges, function (b) {
+      var img = b.parentNode.querySelector('img'); if (!img || !img.naturalWidth) return;
+      var bw = img.clientWidth, bh = img.clientHeight, r = img.naturalWidth / img.naturalHeight;
+      var w = Math.min(bw, bh * r), h = Math.min(bh, bw / r);
+      b.style.right = (bw - w + 8) + 'px'; b.style.bottom = '8px';
+    });
+  }
+  Array.prototype.forEach.call(badges, function (b) { var i = b.parentNode.querySelector('img'); if (i) i.addEventListener('load', place); });
+  window.addEventListener('resize', place); place();
+})();
+
+/* --- art: open the sketchbook video at the moment of the work --- */
+(function () {
+  var links = document.querySelectorAll('[data-sb]'); if (!links.length) return;
+  var box = null, vid = null, last = null;
+  function close() { if (!box) return; vid.pause(); vid.removeAttribute('src'); vid.load(); box.hidden = true; document.body.style.overflow = ''; if (last) last.focus(); }
+  function open(src, t) {
+    if (!box) {
+      box = document.createElement('div'); box.className = 'sb-modal'; box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true');
+      box.innerHTML = '<button class="sb-close" type="button" aria-label="Close">×</button><video controls playsinline preload="metadata"></video>';
+      document.body.appendChild(box); vid = box.querySelector('video');
+      box.addEventListener('click', function (e) { if (e.target === box) close(); });
+      box.querySelector('.sb-close').addEventListener('click', close);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && box && !box.hidden) close(); });
+    }
+    box.hidden = false; document.body.style.overflow = 'hidden';
+    vid.src = src + '#t=' + t;
+    vid.addEventListener('loadedmetadata', function f() { vid.removeEventListener('loadedmetadata', f); try { vid.currentTime = t; } catch (e) {} var p = vid.play(); if (p && p.catch) p.catch(function () {}); });
+    box.querySelector('.sb-close').focus();
+  }
+  Array.prototype.forEach.call(links, function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); last = a; open(a.getAttribute('data-sb'), parseFloat(a.getAttribute('data-t')) || 0); });
+  });
+})();
