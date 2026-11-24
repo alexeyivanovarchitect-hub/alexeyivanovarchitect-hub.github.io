@@ -562,3 +562,10 @@ html[data-theme="dark"] .pkg-card .pkg-matrix img { filter: invert(1); }
 .art-haiku { margin: 2px 0 6px; font-size: 15px; line-height: 1.45; font-style: italic; color: var(--ink); opacity: .85; }
 .art-haiku .art-place { display: block; font-style: normal; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
 @supports (grid-template-rows: subgrid) { .art-card { grid-row: span 7; } }
+/* art: contact links quiet, the work comes first */
+.art-ask { margin: 6px 0 0; font-size: 11px; }
+.art-card .actions { gap: 16px; margin-top: 2px; flex-wrap: wrap; }
+.art-card .actions .btn,
+.art-card .actions .btn--signal,
+.art-card:is(:hover, :focus-within) .actions .btn--signal { flex: 0 0 auto; min-height: 0; padding: 2px 0; background: none; border: 0; border-radius: 0; color: var(--muted); font-size: 13px; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.art-card .actions .btn:is(:hover, :focus-visible) { color: var(--signal); background: none; }
