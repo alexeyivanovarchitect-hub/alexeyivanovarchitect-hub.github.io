@@ -556,3 +556,5 @@ html[data-theme="dark"] .pkg-card .pkg-matrix img { filter: invert(1); }
   .art-card figure { align-self: end; }
   .art-title { min-height: 0 !important; }
 }
+.art-route-text p { margin: 0 0 14px; }
+.art-note { display: block; margin-top: 4px; text-transform: none; letter-spacing: 0; font-weight: 400; line-height: 1.4; }
