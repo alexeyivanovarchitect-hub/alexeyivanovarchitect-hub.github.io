@@ -655,6 +655,15 @@ h1, h2, .slogan, .index-row .title, .price-val, .pkg-name, .art-group-title, .co
 @media (max-width: 719px) {
   #apartment > .grid > h1 { order: -2; }
   #apartment > .grid > figure { order: -1; margin: 0; }
-  #apartment .actions { flex-wrap: nowrap; }
-  #apartment .actions .btn { flex: 1 1 auto; padding-inline: 10px; letter-spacing: .08em; white-space: nowrap; text-align: center; justify-content: center; }
+  #apartment .actions { flex-wrap: wrap; }
+  #apartment .actions .btn { flex: 1 0 auto; max-width: 100%; white-space: nowrap; padding-inline: 14px; text-align: center; justify-content: center; }
 }
+
+/* never wider than the screen: grid and flex children may shrink */
+.grid > *, .actions > *, .calc-out > * { min-width: 0; }
+html, body { overflow-x: clip; }
+.calc-out .price-val { white-space: nowrap; }
+.qr-grid > * { min-width: 0; } svg.qr { max-width: 100%; height: auto; }
+.qr-card { grid-template-columns: minmax(0, 1fr); } .qr-card > * { min-width: 0; }
+.site-footer span, .site-footer a { overflow-wrap: anywhere; } p, li, h1, h2, h3 { overflow-wrap: break-word; }
+.grid > [style*="display:grid"], .grid > .price { grid-template-columns: minmax(0, 1fr); }
