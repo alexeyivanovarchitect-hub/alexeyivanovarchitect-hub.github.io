@@ -201,22 +201,43 @@ function L(ru, en) { return EN_UI ? en : ru; }
   });
 })();
 
-/* --- art catalogue filter --- */
+/* --- art catalogue filter: technique and country --- */
 (function () {
   var grid = document.querySelector('[data-art]'); if (!grid) return;
-  var btns = document.querySelectorAll('[data-art-filter]');
-  Array.prototype.forEach.call(btns, function (b) {
-    b.addEventListener('click', function () {
-      var f = b.getAttribute('data-art-filter');
-      Array.prototype.forEach.call(btns, function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-      var head = null, seen = false;
-      Array.prototype.forEach.call(grid.children, function (li) {
-        if (li.classList.contains('art-group')) { if (head) head.hidden = !seen; head = li; seen = false; return; }
-        li.hidden = f !== 'all' && li.getAttribute('data-type') !== f; if (!li.hidden) seen = true;
-      });
-      if (head) head.hidden = !seen;
+  var tBtns = document.querySelectorAll('[data-art-filter]'), cBtns = document.querySelectorAll('[data-art-country]');
+  var links = document.querySelectorAll('.art-places [data-country]');
+  var type = 'all', country = 'all', empty = null;
+  function apply() {
+    var head = null, seen = false;
+    Array.prototype.forEach.call(grid.children, function (li) {
+      if (li.classList.contains('art-group')) { if (head) head.hidden = !seen; head = li; seen = false; return; }
+      li.hidden = (type !== 'all' && li.getAttribute('data-type') !== type) || (country !== 'all' && li.getAttribute('data-country') !== country);
+      if (!li.hidden) seen = true;
     });
-  });
+    if (head) head.hidden = !seen;
+    var any = Array.prototype.some.call(grid.children, function (li) { return li.classList.contains('art-card') && !li.hidden; });
+    if (!empty) {
+      empty = document.createElement('p'); empty.className = 'muted art-empty';
+      empty.textContent = /^en/.test(document.documentElement.lang) ? 'No works in this combination yet. Try another technique or country.' : 'Таких работ пока нет. Выберите другую технику или страну.';
+      grid.parentNode.insertBefore(empty, grid.nextSibling);
+    }
+    empty.hidden = any;
+    Array.prototype.forEach.call(links, function (a) {
+      var g = document.getElementById(a.getAttribute('href').slice(1));
+      a.hidden = !g || g.hidden;
+    });
+  }
+  function bind(btns, attr, set) {
+    Array.prototype.forEach.call(btns, function (b) {
+      b.addEventListener('click', function () {
+        set(b.getAttribute(attr));
+        Array.prototype.forEach.call(btns, function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        apply();
+      });
+    });
+  }
+  bind(tBtns, 'data-art-filter', function (v) { type = v; });
+  bind(cBtns, 'data-art-country', function (v) { country = v; });
 })();
 
 /* --- art: ruble prices by the Central Bank of Russia rate --- */

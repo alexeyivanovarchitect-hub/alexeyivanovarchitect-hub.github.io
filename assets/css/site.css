@@ -597,3 +597,12 @@ html[data-theme="dark"] .pkg-card .pkg-matrix img { filter: invert(1); }
 .sb-modal video { max-height: 88vh; max-width: 100%; width: auto; background: #000; }
 .sb-close { position: absolute; top: 10px; right: 14px; width: 40px; height: 40px; font-size: 28px; line-height: 1; color: #fff; background: none; border: 0; cursor: pointer; }
 .sb-close:hover, .sb-close:focus-visible { color: var(--signal); }
+.art-filter-country { margin-top: calc(var(--gap) * -1.4); }
+.art-places a[hidden] { display: none; }
+.art-empty { margin: var(--gap) 0 calc(var(--gap) * 3); }
+@media (max-width: 719px) {
+  .art-filter { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: calc(var(--gut, 16px) * -1); padding-inline: var(--gut, 16px); margin-bottom: 12px; }
+  .art-filter::-webkit-scrollbar { display: none; }
+  .art-filter .btn { flex: 0 0 auto; }
+  .art-filter-country { margin-top: 0; margin-bottom: calc(var(--gap) * 1.5); }
+}
