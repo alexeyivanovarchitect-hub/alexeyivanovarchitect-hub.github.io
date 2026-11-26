@@ -150,7 +150,7 @@ p  { max-width: 62ch; }
 @media (min-width: 720px) { .figure { border-bottom: 0; border-top: 1px solid var(--line); } .figures { border-top: 0; } }
 
 .steps { counter-reset: s; }
-.step { border-top: 1px solid var(--line); padding-top: 14px; display: grid; gap: 8px; }
+.step { border-top: 1px solid var(--line); padding-top: 14px; display: grid; gap: 8px; align-content: start; }
 
 /* ---------- project index (numbered list with pictograms) ---------- */
 .index { border-top: 1px solid var(--ink); }
