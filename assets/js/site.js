@@ -229,7 +229,7 @@ function L(ru, en) { return EN_UI ? en : ru; }
       s.textContent = '≈ ' + v.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽';
     });
     var dt = new Date(d.Date), el = document.querySelector('[data-rub-date]');
-    if (el && !isNaN(dt)) el.textContent = ('0' + dt.getDate()).slice(-2) + '.' + ('0' + (dt.getMonth() + 1)).slice(-2) + '.' + dt.getFullYear();
+    if (el && !isNaN(dt)) el.textContent = ['январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь'][dt.getMonth()] + ' ' + dt.getFullYear();
   }).catch(function () {});
 })();
 
