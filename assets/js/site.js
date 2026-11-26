@@ -92,6 +92,15 @@ function L(ru, en) { return EN_UI ? en : ru; }
     a.addEventListener('click', function () {
       var want = a.getAttribute('data-brief-type');
       Array.prototype.forEach.call(document.querySelectorAll('input[name="type"]'), function (r) { r.checked = r.value === want; });
+      if (window.briefSync) window.briefSync();
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-brief-scope]'), function (a) {
+    a.addEventListener('click', function () {
+      var want = a.getAttribute('data-brief-scope').split('|');
+      Array.prototype.forEach.call(document.querySelectorAll('input[name="scope"]'), function (c) { c.checked = want.indexOf(c.value) > -1; });
+      Array.prototype.forEach.call(document.querySelectorAll('input[name="type"]'), function (r) { r.checked = r.value === L('Другое','Other'); });
+      if (window.briefSync) window.briefSync();
     });
   });
 
@@ -99,6 +108,24 @@ function L(ru, en) { return EN_UI ? en : ru; }
          Later: replace sendRequest() with a Telegram bot or a form service. --- */
   var form = document.getElementById('brief-form');
   if (form) {
+    var pkgField = document.getElementById('b-pkg-field');
+    var isFlat = function () { var t = form.querySelector('input[name="type"]:checked'); return !!t && t.value === L('Квартира','Apartment'); };
+    var scopeField = document.getElementById('b-scope-field');
+    var briefKind = function () {
+      if (isFlat()) return 'flat';
+      var viz = Array.prototype.some.call(form.querySelectorAll('input[name="scope"]:checked'), function (c) { return c.value === L('Визуализации','Visualisations') || c.value === L('Анимация','Animation'); });
+      var t = form.querySelector('input[name="type"]:checked');
+      var other = !t || [L('Офис','Office'), L('Общественное пространство','Public space'), L('Другое','Other')].indexOf(t.value) > -1;
+      return viz && other ? 'anim' : 'house';
+    };
+    window.briefSync = function () {
+      if (pkgField) pkgField.hidden = !isFlat(); if (scopeField) scopeField.hidden = isFlat();
+      var k = briefKind();
+      Array.prototype.forEach.call(document.querySelectorAll('#b-brief-link a, #brief-full'), function (a) { a.href = a.getAttribute('href').replace(/t=\w+/, 't=' + k); });
+    };
+    Array.prototype.forEach.call(form.querySelectorAll('input[name="scope"]'), function (r) { r.addEventListener('change', window.briefSync); });
+    Array.prototype.forEach.call(form.querySelectorAll('input[name="type"]'), function (r) { r.addEventListener('change', window.briefSync); });
+    window.briefSync();
     var out = document.getElementById('brief-out');
     var after = document.getElementById('brief-after');
     var mail = document.getElementById('brief-mail');
@@ -110,11 +137,14 @@ function L(ru, en) { return EN_UI ? en : ru; }
         L('Имя: ','Name: ') + f['name'].value,
         L('Контакт: ','Contact: ') + ((form.querySelector('input[name="messenger"]:checked') || {}).value || '') + ' ' + f['contact'].value,
         L('Объект: ','Property: ') + ((form.querySelector('input[name="type"]:checked') || {}).value || L('не указано','not specified')),
-        L('Что нужно: ','Needed: ') + (Array.prototype.map.call(form.querySelectorAll('input[name="scope"]:checked'), function (c) { return c.value; }).join(', ') || L('не указано','not specified')),
-        L('Площадь: ','Area: ') + (f['area'].value ? f['area'].value + ' м²' : L('не указана','not specified')),
-        L('Задача и сроки: ','Task and timeline: ') + (f['task'].value || L('не указано','not specified'))
-      ].join('\n');
+        isFlat() ? null : L('Что нужно: ','Needed: ') + (Array.prototype.map.call(form.querySelectorAll('input[name="scope"]:checked'), function (c) { return c.value; }).join(', ') || L('не указано','not specified')),
+        L('Площадь: ','Area: ') + (f['area'].value ? f['area'].value + L(' м²',' m²') : L('не указана','not specified')),
+        isFlat() ? L('Пакет: ','Package: ') + ((form.querySelector('input[name="pkg"]:checked') || {}).value || L('не выбран','not chosen')) : null,
+        L('Сроки: ','Timeline: ') + ((form.querySelector('input[name="when"]:checked') || {}).value || L('не указаны','not specified')),
+        L('Задача: ','Task: ') + (f['task'].value || L('не указано','not specified'))
+      ].filter(function (x) { return x !== null; }).join('\n');
       out.textContent = text;
+      try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: L('form-submit','en-form-submit'), title: L('Заявка собрана','Request built'), event: true }); } catch (err) {}
       after.hidden = false;
       var wa = document.getElementById('brief-wa');
       if (wa) wa.href = 'https://wa.me/79175704682?text=' + encodeURIComponent(text);
@@ -188,7 +218,8 @@ function L(ru, en) { return EN_UI ? en : ru; }
   var m = /[?&]pkg=([^&#]+)/.exec(location.search); if (!m) return;
   var pkg = decodeURIComponent(m[1]), en = document.documentElement.lang === 'en';
   var t = form.querySelector('input[name="type"][value="' + (en ? 'Apartment' : 'Квартира') + '"]'); if (t) t.checked = true;
-  var task = form.elements['task']; if (task && !task.value) task.value = (en ? 'Package ' + pkg + '. ' : 'Пакет «' + pkg + '». ');
+  var r = form.querySelector('input[name="pkg"][value="' + pkg + '"]'); if (r) r.checked = true;
+  if (window.briefSync) window.briefSync();
 })();
 
 /* package cards: tap or click highlights the card */

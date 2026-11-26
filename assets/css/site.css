@@ -606,3 +606,23 @@ html[data-theme="dark"] .pkg-card .pkg-matrix img { filter: invert(1); }
   .art-filter .btn { flex: 0 0 auto; }
   .art-filter-country { margin-top: 0; margin-bottom: calc(var(--gap) * 1.5); }
 }
+.field[hidden] { display: none; }
+/* detailed brief */
+.bf { max-width: 920px; }
+.bf-brief { counter-reset: bfsec; display: grid; gap: calc(var(--gap) * 2); }
+.bf-sec { border: 0; border-top: 1px solid var(--ink); padding: 16px 0 0; margin: 0; display: grid; gap: 20px; min-width: 0; }
+.bf-sec[hidden] { display: none; }
+.bf-brief .bf-sec:not([hidden]) { counter-increment: bfsec; }
+.bf-num::before { content: counter(bfsec) ". "; }
+.bf-contacts { margin-bottom: calc(var(--gap) * 2); }
+.bf-other { flex: 1 1 220px; min-width: 180px; }
+.bf-rooms { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px 20px; }
+.bf-room { display: grid; gap: 6px; font-size: .95em; margin: 0; }
+.bf-room input { width: 100%; }
+.bf-total b { font-weight: 500; padding: 10px 0; }
+.bf-note { margin: 0; }
+.bf-max { flex-basis: 100%; margin: 4px 0 0; }
+.bf-link { margin: -8px 0 0; }
+.bf-sec > legend { float: left; width: 100%; padding: 0; margin: 0; }
+.bf-sec > legend + * { clear: both; }
+.bf .bf-q { text-transform: none; letter-spacing: 0; font-size: 1rem; line-height: 1.4; color: var(--ink); }
