@@ -677,3 +677,21 @@ html, body { overflow-x: clip; }
 .vz-grid + .actions { margin-top: clamp(40px, 6vw, 72px); }
 .art-group-video { margin-top: 12px; gap: 8px; flex-wrap: wrap; }
 .art-group-video-label { margin: 12px 0 0; } .art-group-video-label + .art-group-video { margin-top: 8px; }
+
+/* contacts over photo */
+.contact-card { position: relative; max-width: 620px; }
+.contact-card img { display: block; width: 100%; height: auto; }
+.contact-card .contact-lines { position: absolute; left: 0; right: 0; bottom: 0; display: grid; gap: 14px; padding: 90px clamp(16px, 3vw, 28px) clamp(16px, 3vw, 28px);
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.78) 45%); --ink: #f2f2ef; --line: rgba(255,255,255,.5); color: #f2f2ef; }
+.contact-card .contact-line { gap: 10px; }
+.contact-card .contact-line .value { font-size: clamp(17px, 2.6vw, 26px); overflow-wrap: normal; white-space: nowrap; }
+.contact-card .btn { color: #f2f2ef; border-color: rgba(255,255,255,.75); background: transparent; }
+.contact-card .btn:is(:hover, :focus-visible) { background: #f2f2ef; color: #111; }
+@media (max-width: 719px) { .contact-card .contact-line .value { font-size: min(21px, 5.2vw); } }
+@media (max-width: 719px) {
+  .contact-card .contact-lines { gap: 8px; padding: 60px 12px 12px; }
+  .contact-card .contact-line { gap: 6px; }
+  .contact-card .btn { min-height: 34px; padding: 0 9px; font-size: 11px; letter-spacing: .08em; }
+}
+.contact-card .contact-slogan { position: absolute; top: 0; left: 0; right: 0; margin: 0; padding: clamp(16px, 3vw, 28px); color: #111; max-width: none; }
+@media (max-width: 719px) { .contact-card .contact-slogan { padding: 14px 12px; font-size: 19px; } }
