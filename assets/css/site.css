@@ -695,3 +695,7 @@ html, body { overflow-x: clip; }
 }
 .contact-card .contact-slogan { position: absolute; top: 0; left: 0; right: 0; margin: 0; padding: clamp(16px, 3vw, 28px); color: #111; max-width: none; }
 @media (max-width: 719px) { .contact-card .contact-slogan { padding: 14px 12px; font-size: 19px; } }
+.art-group-photo { margin: 0 0 16px; }
+.art-group-photo img { display: block; width: 100%; max-width: 360px; height: auto; }
+.art-group-photo figcaption { margin-top: 6px; }
+@media (min-width: 720px) { .art-group-photo { float: right; width: 300px; margin: 0 0 16px 32px; } .art-group:has(.art-group-photo) { max-width: none; display: flow-root; } }
