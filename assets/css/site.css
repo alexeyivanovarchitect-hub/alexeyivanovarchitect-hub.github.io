@@ -675,3 +675,5 @@ html, body { overflow-x: clip; }
 .vz-title { font-family: var(--font-display); font-size: var(--t-lead); font-weight: 400; }
 .vz-title a { text-decoration: none; }
 .vz-grid + .actions { margin-top: clamp(40px, 6vw, 72px); }
+.art-group-video { margin-top: 12px; gap: 8px; flex-wrap: wrap; }
+.art-group-video-label { margin: 12px 0 0; } .art-group-video-label + .art-group-video { margin-top: 8px; }
