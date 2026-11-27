@@ -665,5 +665,13 @@ html, body { overflow-x: clip; }
 .calc-out .price-val { white-space: nowrap; }
 .qr-grid > * { min-width: 0; } svg.qr { max-width: 100%; height: auto; }
 .qr-card { grid-template-columns: minmax(0, 1fr); } .qr-card > * { min-width: 0; }
-.site-footer span, .site-footer a { overflow-wrap: anywhere; } p, li, h1, h2, h3 { overflow-wrap: break-word; }
+.site-footer span:not([data-social-foot]) { overflow-wrap: anywhere; } [data-social-foot] { flex-wrap: wrap; row-gap: 8px; } [data-social-foot] a { overflow-wrap: normal; white-space: nowrap; } p, li, h1, h2, h3 { overflow-wrap: break-word; }
 .grid > [style*="display:grid"], .grid > .price { grid-template-columns: minmax(0, 1fr); }
+
+/* visualisation page */
+.vz-grid { row-gap: clamp(40px, 6vw, 72px); }
+.vz-item video { display: block; width: 100%; height: auto; background: #000; }
+.vz-item figcaption { margin-top: 12px; display: grid; gap: 4px; }
+.vz-title { font-family: var(--font-display); font-size: var(--t-lead); font-weight: 400; }
+.vz-title a { text-decoration: none; }
+.vz-grid + .actions { margin-top: clamp(40px, 6vw, 72px); }

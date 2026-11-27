@@ -136,4 +136,20 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://aivanovarchitect.com/services/brief/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://aivanovarchitect.com/en/services/brief/"/>
   </url>
+  <url><loc>https://aivanovarchitect.com/projects/butovsky/</loc><lastmod>2026-11-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aivanovarchitect.com/projects/butovsky/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivanovarchitect.com/en/projects/butovsky/"/>
+  </url>
+  <url><loc>https://aivanovarchitect.com/en/projects/butovsky/</loc><lastmod>2026-11-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aivanovarchitect.com/projects/butovsky/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivanovarchitect.com/en/projects/butovsky/"/>
+  </url>
+  <url><loc>https://aivanovarchitect.com/services/visualization/</loc><lastmod>2026-11-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aivanovarchitect.com/services/visualization/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivanovarchitect.com/en/services/visualization/"/>
+  </url>
+  <url><loc>https://aivanovarchitect.com/en/services/visualization/</loc><lastmod>2026-11-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aivanovarchitect.com/services/visualization/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivanovarchitect.com/en/services/visualization/"/>
+  </url>
 </urlset>
