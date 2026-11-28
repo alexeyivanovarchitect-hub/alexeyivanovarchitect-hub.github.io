@@ -746,3 +746,6 @@ html, body { overflow-x: clip; }
   .contact-card > picture img { width: 100%; max-width: none; max-height: none; }
   .contact-card .contact-slogan { min-width: 0; font-size: clamp(20px, 1.8vw, 26px); }
 }
+/* mobile menu: a vertical list (it sits inside the header, whose .wrap is a flex row) */
+.site-header .mobile-nav:not([hidden]) { display: block; min-height: 0; }
+.site-header .mobile-nav > * + * { margin-left: 0; }

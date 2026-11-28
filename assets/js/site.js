@@ -358,3 +358,22 @@ function L(ru, en) { return EN_UI ? en : ru; }
   if (!f || !l || !a) return;
   f.addEventListener('submit', function () { setTimeout(function () { if (!a.hidden) l.hidden = true; }, 0); });
 })();
+
+/* Same-page links (#brief, menu): jump straight to the section and keep it there while images above load */
+(function () {
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="#"]'); if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey) return;
+    var u; try { u = new URL(a.href, location.href); } catch (err) { return; }
+    var same = function (x) { return x.replace(/index\.html$/, ''); };
+    if (u.origin !== location.origin || same(u.pathname) !== same(location.pathname)) return;
+    var id = decodeURIComponent(u.hash.slice(1)); if (!id || id === 'grid') return;
+    var el = document.getElementById(id); if (!el) return;
+    e.preventDefault();
+    if (history.pushState) history.pushState(null, '', '#' + id);
+    var stop = false, t0 = Date.now();
+    var off = function () { stop = true; };
+    ['wheel', 'touchstart', 'keydown'].forEach(function (n) { window.addEventListener(n, off, { passive: true, once: true }); });
+    function fix() { if (stop || Date.now() - t0 > 5000) return; var m = parseFloat(getComputedStyle(el).scrollMarginTop) || 0; var top = el.getBoundingClientRect().top; if (Math.abs(top - m) > 4) el.scrollIntoView({ block: 'start' }); }
+    fix(); [150, 500, 1000, 1800, 3000].forEach(function (ms) { setTimeout(fix, ms); });
+  });
+})();
