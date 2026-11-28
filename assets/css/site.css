@@ -723,3 +723,4 @@ html, body { overflow-x: clip; }
 .bf-fold.open > legend ~ * { margin-top: 20px; }
 .bf-brief:has(.bf-fold) { gap: 0 !important; row-gap: 0 !important; }
 .bf-brief:has(.bf-fold) > .bf-fold + .bf-fold { margin-top: 0 !important; }
+#brief-wa, #brief-tg, #bf-wa, #bf-tg { display: none !important; }

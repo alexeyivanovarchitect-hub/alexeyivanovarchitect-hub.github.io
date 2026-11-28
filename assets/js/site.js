@@ -135,13 +135,14 @@ function L(ru, en) { return EN_UI ? en : ru; }
       var text = [
         L('Заявка с сайта aivanovarchitect.com','Request from aivanovarchitect.com'),
         L('Имя: ','Name: ') + f['name'].value,
-        L('Контакт: ','Contact: ') + ((form.querySelector('input[name="messenger"]:checked') || {}).value || '') + ' ' + f['contact'].value,
+        L('Контакт: ','Contact: ') + (((form.querySelector('input[name="messenger"]:checked') || {}).value || '') + ' ' + f['contact'].value).trim(),
         L('Объект: ','Property: ') + ((form.querySelector('input[name="type"]:checked') || {}).value || L('не указано','not specified')),
         isFlat() ? null : L('Что нужно: ','Needed: ') + (Array.prototype.map.call(form.querySelectorAll('input[name="scope"]:checked'), function (c) { return c.value; }).join(', ') || L('не указано','not specified')),
         L('Площадь: ','Area: ') + (f['area'].value ? f['area'].value + L(' м²',' m²') : L('не указана','not specified')),
         isFlat() ? L('Пакет: ','Package: ') + ((form.querySelector('input[name="pkg"]:checked') || {}).value || L('не выбран','not chosen')) : null,
         L('Сроки: ','Timeline: ') + ((form.querySelector('input[name="when"]:checked') || {}).value || L('не указаны','not specified')),
-        L('Задача: ','Task: ') + (f['task'].value || L('не указано','not specified'))
+        L('Задача: ','Task: ') + (f['task'].value || L('не указано','not specified')),
+        '', L('Фото, планы и примеры пришлю следом.','I will send photos, plans and examples next.')
       ].filter(function (x) { return x !== null; }).join('\n');
       out.textContent = text;
       try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: L('form-submit','en-form-submit'), title: L('Заявка собрана','Request built'), event: true }); } catch (err) {}

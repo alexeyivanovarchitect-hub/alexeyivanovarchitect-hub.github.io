@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&amp;display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=20261128i">
+<link rel="stylesheet" href="assets/css/site.css?v=20261128j">
 <script>try{var t=localStorage.getItem('ai-theme');if(t)document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('ai-simple')==='1')document.documentElement.classList.add('simple')}catch(e){}</script>
 
 <script data-goatcounter="https://aivanovarchitect.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
@@ -153,10 +153,10 @@
       <fieldset class="field chips"><legend class="label">Сроки</legend><label class="chip"><input type="radio" name="when" value="Как можно скорее" id="b-when-0"><span>Как можно скорее</span></label><label class="chip"><input type="radio" name="when" value="В течение месяца" id="b-when-1"><span>В течение месяца</span></label><label class="chip"><input type="radio" name="when" value="Через 2–3 месяца" id="b-when-2"><span>Через 2–3 месяца</span></label><label class="chip"><input type="radio" name="when" value="Не спешу" id="b-when-3"><span>Не спешу</span></label></fieldset>
       <div class="field"><label class="label" for="b-task">Задача</label><textarea id="b-task" name="task"></textarea></div>
       <div class="field"><label class="label" for="b-name">Имя</label><input id="b-name" name="name" autocomplete="name" required></div>
-      <fieldset class="field chips"><legend class="label">Мессенджер для связи</legend><label class="chip"><input type="radio" name="messenger" value="WhatsApp" id="b-messenger-0" checked><span>WhatsApp</span></label><label class="chip"><input type="radio" name="messenger" value="Telegram" id="b-messenger-1"><span>Telegram</span></label></fieldset>
-      <div class="field"><label class="label" for="b-contact">Номер телефона или имя пользователя</label><input id="b-contact" name="contact" autocomplete="tel" required></div>
-      <p class="muted bf-req">Обязательны только имя и контакт.</p>
-      <div class="actions"><button class="btn btn--signal" type="submit">Далее, выбрать куда отправить</button></div>
+      <fieldset class="field chips" hidden><legend class="label">Мессенджер для связи</legend><label class="chip"><input type="radio" name="messenger" value="WhatsApp" id="b-messenger-0" checked><span>WhatsApp</span></label><label class="chip"><input type="radio" name="messenger" value="Telegram" id="b-messenger-1"><span>Telegram</span></label><label class="chip"><input type="radio" name="messenger" value="Почта"><span>Почта</span></label></fieldset>
+      <div class="field"><label class="label" for="b-contact">Телефон, имя пользователя или почта</label><input id="b-contact" name="contact" autocomplete="tel"></div>
+      <p class="muted bf-req">Обязательно только имя.</p>
+      <div class="actions"><button class="btn btn--signal" type="submit" data-send="wa">Отправить в WhatsApp</button><button class="btn" type="submit" data-send="tg">Отправить в Telegram</button><button class="btn" type="submit" data-send="mail">Отправить на почту</button></div>
       <p class="muted bf-link" id="b-brief-link"><a href="services/brief/index.html?t=flat" data-goatcounter-click="form-to-brief">Рассказать подробнее →</a></p>
       <div id="brief-after" hidden style="display:grid;gap:12px">
         <pre class="output" id="brief-out" aria-live="polite"></pre>
@@ -230,7 +230,8 @@
     </div>
   </div>
 </footer>
-<script src="assets/js/site.js?v=20261128e" defer></script>
+<script src="assets/js/site.js?v=20261128g" defer></script>
+<script src="assets/js/brief-extras.js?v=20261128c" defer></script>
 
 </body>
 </html>

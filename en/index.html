@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&amp;display=swap">
-<link rel="stylesheet" href="../assets/css/site.css?v=20261128i">
+<link rel="stylesheet" href="../assets/css/site.css?v=20261128j">
 <script>try{var t=localStorage.getItem('ai-theme');if(t)document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('ai-simple')==='1')document.documentElement.classList.add('simple')}catch(e){}</script>
 
 <script data-goatcounter="https://aivanovarchitect.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
@@ -153,10 +153,10 @@
       <fieldset class="field chips"><legend class="label">Timeline</legend><label class="chip"><input type="radio" name="when" value="As soon as possible" id="b-when-0"><span>As soon as possible</span></label><label class="chip"><input type="radio" name="when" value="Within a month" id="b-when-1"><span>Within a month</span></label><label class="chip"><input type="radio" name="when" value="In 2–3 months" id="b-when-2"><span>In 2–3 months</span></label><label class="chip"><input type="radio" name="when" value="No rush" id="b-when-3"><span>No rush</span></label></fieldset>
       <div class="field"><label class="label" for="b-task">Task</label><textarea id="b-task" name="task"></textarea></div>
       <div class="field"><label class="label" for="b-name">Name</label><input id="b-name" name="name" autocomplete="name" required></div>
-      <fieldset class="field chips"><legend class="label">Preferred messenger</legend><label class="chip"><input type="radio" name="messenger" value="WhatsApp" id="b-messenger-0" checked><span>WhatsApp</span></label><label class="chip"><input type="radio" name="messenger" value="Telegram" id="b-messenger-1"><span>Telegram</span></label></fieldset>
-      <div class="field"><label class="label" for="b-contact">Phone number or username</label><input id="b-contact" name="contact" autocomplete="tel" required></div>
-      <p class="muted bf-req">Only name and contact are required.</p>
-      <div class="actions"><button class="btn btn--signal" type="submit">Next, choose where to send</button></div>
+      <fieldset class="field chips" hidden><legend class="label">Preferred messenger</legend><label class="chip"><input type="radio" name="messenger" value="WhatsApp" id="b-messenger-0" checked><span>WhatsApp</span></label><label class="chip"><input type="radio" name="messenger" value="Telegram" id="b-messenger-1"><span>Telegram</span></label><label class="chip"><input type="radio" name="messenger" value="Email"><span>Email</span></label></fieldset>
+      <div class="field"><label class="label" for="b-contact">Phone, username or email</label><input id="b-contact" name="contact" autocomplete="tel"></div>
+      <p class="muted bf-req">Only your name is required.</p>
+      <div class="actions"><button class="btn btn--signal" type="submit" data-send="wa">Send via WhatsApp</button><button class="btn" type="submit" data-send="tg">Send via Telegram</button><button class="btn" type="submit" data-send="mail">Send by email</button></div>
       <p class="muted bf-link" id="b-brief-link"><a href="services/brief/index.html?t=flat" data-goatcounter-click="en-form-to-brief">Tell me more →</a></p>
       <div id="brief-after" hidden style="display:grid;gap:12px">
         <pre class="output" id="brief-out" aria-live="polite"></pre>
@@ -230,7 +230,8 @@
     </div>
   </div>
 </footer>
-<script src="../assets/js/site.js?v=20261128e" defer></script>
+<script src="../assets/js/site.js?v=20261128g" defer></script>
+<script src="../assets/js/brief-extras.js?v=20261128c" defer></script>
 
 </body>
 </html>
