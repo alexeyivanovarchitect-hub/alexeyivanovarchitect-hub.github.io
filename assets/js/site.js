@@ -323,3 +323,16 @@ function L(ru, en) { return EN_UI ? en : ru; }
     a.addEventListener('click', function (e) { e.preventDefault(); last = a; open(a.getAttribute('data-sb'), parseFloat(a.getAttribute('data-t')) || 0); });
   });
 })();
+
+/* Keep anchor jumps (index.html#brief) on target while images above load (Instagram in-app browser) */
+(function () {
+  var id = decodeURIComponent((location.hash || '').slice(1));
+  if (!id || id === 'grid') return;
+  var el = document.getElementById(id); if (!el) return;
+  var stop = false, t0 = Date.now();
+  ['wheel', 'touchstart', 'keydown'].forEach(function (e) { window.addEventListener(e, function () { stop = true; }, { passive: true, once: true }); });
+  function fix() { if (stop || Date.now() - t0 > 6000) return; var top = el.getBoundingClientRect().top; var off = parseFloat(getComputedStyle(el).scrollMarginTop) || 0; if (Math.abs(top - off) > 4) el.scrollIntoView({ block: 'start' }); }
+  [100, 400, 900, 1600, 2600, 4000].forEach(function (ms) { setTimeout(fix, ms); });
+  window.addEventListener('load', fix);
+  document.querySelectorAll('img').forEach(function (i) { if (!i.complete) i.addEventListener('load', fix, { once: true }); });
+})();
