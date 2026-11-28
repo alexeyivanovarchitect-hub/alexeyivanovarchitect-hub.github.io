@@ -1,0 +1,11 @@
+name: Site size check
+on: [push, workflow_dispatch]
+jobs:
+  size:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check published size
+        run: |
+          s=$(du -sb --exclude=.git . | cut -f1); mb=$((s/1048576)); echo "Site size: ${mb} MB"
+          if [ $mb -gt 900 ]; then echo "::warning::Site is ${mb} MB, limit is 1024 MB"; fi
