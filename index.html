@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&amp;display=swap">
-<link rel="stylesheet" href="assets/css/site.css?v=20261128o">
+<link rel="stylesheet" href="assets/css/site.css?v=20261128z">
 <script>try{var t=localStorage.getItem('ai-theme');if(t)document.documentElement.setAttribute('data-theme',t);if(localStorage.getItem('ai-simple')==='1')document.documentElement.classList.add('simple')}catch(e){}</script>
 
 <script data-goatcounter="https://aivanovarchitect.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
@@ -43,10 +43,10 @@
   <div class="grid">
     <h1 class="s-12" style="font-size:var(--t-xl)">Дизайн-проект квартиры от 1 недели</h1>
     <div class="s-6" style="display:grid;gap:16px;align-content:start">
-      <p class="lead">«Идея», это планировка и AI-визуализация каждого помещения за 1–2 недели. «Картинка», эскизный проект с концепцией и визуализациями всех комнат за 2–3 недели. «Инструкция», полный проект с инженерией, развёртками и ведомостями для подрядчика за 4–5 недель.</p>
+      <p class="lead">Базовый «Идея», планировка квартиры. Средний «Картинка», планировка и картинки интерьера. Полный «Инструкция», полный проект для ремонта. Для квартиры 60 м² это 1–2, 2–3 и 4–5 недель.</p>
       <div class="calc" data-calc data-rate="10.6" data-rate2="16.2" data-rate3="21.2" data-lang="ru">
       <div class="field"><label for="calc-area">Площадь квартиры, м²</label><input id="calc-area" type="number" inputmode="numeric" min="10" max="1000" step="1" value="60"></div>
-      <p class="calc-out"><span class="label muted">«Идея» · простой</span><span class="price-val num" data-calc-out>от 636 $</span></p><p class="calc-out"><span class="label muted">«Картинка» · базовый</span><span class="price-val num" data-calc-out2>от 972 $</span></p><p class="calc-out"><span class="label muted">«Инструкция» · полный</span><span class="price-val num" data-calc-out3>от 1 272 $</span></p><p class="label muted" style="margin:0">Рубли по курсу ЦБ на сегодня</p>
+      <p class="calc-out"><span class="label muted pkg-tag"><span class="pkg-size" aria-hidden="true"><i class="on"></i><i></i><i></i></span>Базовый · «Идея»</span><span class="price-val num" data-calc-out>от 636 $</span></p><p class="calc-out"><span class="label muted pkg-tag"><span class="pkg-size" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span>Средний · «Картинка»</span><span class="price-val num" data-calc-out2>от 972 $</span></p><p class="calc-out"><span class="label muted pkg-tag"><span class="pkg-size" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>Полный · «Инструкция»</span><span class="price-val num" data-calc-out3>от 1 272 $</span></p>
     </div>
       <p class="muted">Это стартовые цены. Точную стоимость назову после брифа.</p>
       <div class="actions"><a class="btn btn--signal" href="#brief" data-brief-type="Квартира">Рассчитать точно</a><a class="btn" href="services/apartment-design/index.html">Примеры проектов</a></div>
@@ -83,22 +83,27 @@
 <section class="wrap section" id="bim">
   <div class="grid">
     <h2 class="s-6">Модель считает, архитектор думает о людях</h2>
-    <p class="s-5 o-8 muted">Проект ведётся в одной BIM-модели. Чертежи, спецификации и визуализации собираются из неё автоматически, AI ускоряет поиск концепции.</p>
+    <p class="s-5 o-8 muted">Проект ведётся в одной BIM-модели. Чертежи, списки материалов и визуализации собираются из неё автоматически, AI ускоряет поиск концепции.</p>
     <div class="s-7 o-6 gains">
       <p class="label muted">Что это даёт вам</p>
       <ul>
-        <li>Чертежи и спецификации готовы в сжатые сроки</li>
-        <li>Коллизии видны ещё до стройки</li>
-        <li>Больше вариантов концепции на старте</li>
-        <li>Точные площади и сметы</li>
+        <li><a href="services/apartment-design/index.html#example">Чертежи для ремонта за 4–5 недель</a></li>
+        <li>Ошибки видны до ремонта, а не на стройке</li>
+        <li><a href="services/apartment-design/index.html#ai-options">До трёх концепций на выбор</a></li>
+        <li>Списки материалов, чтобы посчитать бюджет</li>
       </ul>
     </div>
     <ol class="s-12 grid steps">
       <li class="step s-3"><span class="label muted num">Шаг 1</span><h3>Бриф</h3><p class="muted">Задача, бюджет, сроки, сценарии жизни.</p><p><a class="label" href="#brief" data-goatcounter-click="bim-step1-brief">Заполнить бриф</a></p></li>
       <li class="step s-3"><span class="label muted num">Шаг 2</span><h3>AI-концепции</h3><p class="muted">Несколько вариантов концепции на выбор.</p><p><a class="label" href="services/apartment-design/index.html#ai-options" data-goatcounter-click="bim-step2-images">Смотреть пример</a></p></li>
-      <li class="step s-3"><span class="label muted num">Шаг 3</span><h3>Рабочая документация</h3><p class="muted">Чертежи и ведомости из одной модели, поэтому размеры сходятся.</p><p><a class="label" href="services/apartment-design/index.html#example" data-goatcounter-click="bim-step3-sheets">Смотреть листы</a></p></li>
-      <li class="step s-3"><span class="label muted num">Шаг 4</span><h3>Визуализация</h3><p class="muted">Рендеры, анимация и панорамы 360°.</p><p><a class="label" href="services/visualization/index.html#examples" data-goatcounter-click="bim-step4-viz">Смотреть примеры</a></p></li>
+      <li class="step s-3"><span class="label muted num">Шаг 3</span><h3>Рабочая документация</h3><p class="muted">Чертежи и списки материалов из одной модели, поэтому размеры сходятся.</p><p><a class="label" href="services/apartment-design/index.html#example" data-goatcounter-click="bim-step3-sheets">Смотреть листы</a></p></li>
+      <li class="step s-3"><span class="label muted num">Шаг 4</span><h3>Визуализация</h3><p class="muted">Точные картинки, ролики и панорамы 360°.</p><p><a class="label" href="services/visualization/index.html#examples" data-goatcounter-click="bim-step4-viz">Смотреть примеры</a></p></li>
     </ol>
+    <aside class="s-12 shepherd" aria-label="Заметка автора">
+      <p class="label muted">Заметка автора</p>
+      <p class="shepherd-text">Будущее не за искусственным интеллектом, а за теми, кто умеет им управлять.</p>
+      <p class="shepherd-who">AI считает и предлагает варианты. Выбирает архитектор, а видит художник.</p>
+    </aside>
   </div>
 </section>
 
@@ -131,12 +136,12 @@
 </section>
 
 <section class="wrap section" id="services">
-  <div class="section-head"><p class="label"><span>Услуги</span><span class="muted">Стоимость после брифа</span></p></div>
+  <div class="section-head"><p class="label"><span>Услуги</span></p></div>
   <p class="slogan">Сначала узнаем, о&nbsp;чём вы мечтаете, потом скажем, сколько это стоит.</p>
   <div class="grid">
-    <article class="service s-4"><h2>Дизайн-проект квартиры</h2><p class="muted">Три пакета на выбор. «Идея» с планировкой, «Картинка» с визуализациями и «Инструкция» с чертежами и инженерией для подрядчика.</p><p class="label num">от 10,6 $/м²</p><span class="actions"><a class="btn btn--small" href="services/apartment-design/index.html">Подробнее и пример</a><a class="btn btn--small" href="#brief" data-brief-type="Квартира">Запросить расчёт</a></span></article>
-    <article class="service s-4"><h2>Визуализация и анимация</h2><p class="muted">Видеопрезентации, рендеры и панорамы 360° по модели или чертежам.</p><p class="label">по брифу</p><a class="btn btn--small" href="services/visualization/index.html" data-goatcounter-click="svc-viz-examples">Примеры</a><a class="btn btn--small" href="#brief" data-brief-scope="Визуализации|Анимация">Запросить расчёт</a></article>
-    <article class="service s-4"><h2>Дома, гостиницы, рестораны</h2><p class="muted">Отдельный бриф. Состав работ определяю после его изучения. Под крупные объекты собираю команду из профильных специалистов и координирую её работу.</p><p class="label">по брифу</p><a class="btn btn--small" href="#brief" data-brief-type="Частный дом">Запросить расчёт</a></article>
+    <article class="service s-4"><h2>Дизайн-проект квартиры</h2><p class="muted">Планировка, визуализации и чертежи для ремонта. Три пакета, от одной планировки до полного проекта.</p><p class="label num">от 10,6 $/м²</p><span class="actions"><a class="btn btn--small" href="services/apartment-design/index.html">Подробнее и пример</a><a class="btn btn--small" href="#brief" data-brief-type="Квартира">Запросить расчёт</a></span></article>
+    <article class="service s-4"><h2>Визуализация и анимация</h2><p class="muted">Ролики и картинки, чтобы показать проект заказчику, инвестору или покупателям до стройки.</p><p class="label">Цена после брифа</p><span class="actions"><a class="btn btn--small" href="services/visualization/index.html" data-goatcounter-click="svc-viz-examples">Примеры</a><a class="btn btn--small" href="#brief" data-brief-scope="Визуализации|Анимация">Запросить расчёт</a></span></article>
+    <article class="service s-4"><h2>Дома, гостиницы, рестораны</h2><p class="muted">Архитектура и интерьер. Под крупные объекты собираю команду профильных специалистов и координирую её работу.</p><p class="label">Цена после брифа</p><span class="actions"><a class="btn btn--small" href="#brief" data-brief-type="Частный дом">Запросить расчёт</a></span></article>
   </div>
 </section>
 
@@ -147,7 +152,7 @@
     <h2 class="s-4">Расскажите о проекте</h2>
     <form class="form s-7 o-6" id="brief-form">
       <fieldset class="field chips"><legend class="label">Тип объекта</legend><label class="chip"><input type="radio" name="type" value="Квартира" id="b-type-0" checked><span>Квартира</span></label><label class="chip"><input type="radio" name="type" value="Частный дом" id="b-type-1"><span>Частный дом</span></label><label class="chip"><input type="radio" name="type" value="Гостиница" id="b-type-2"><span>Гостиница</span></label><label class="chip"><input type="radio" name="type" value="Ресторан или кафе" id="b-type-3"><span>Ресторан или кафе</span></label><label class="chip"><input type="radio" name="type" value="Офис" id="b-type-4"><span>Офис</span></label><label class="chip"><input type="radio" name="type" value="Жилой комплекс" id="b-type-5"><span>Жилой комплекс</span></label><label class="chip"><input type="radio" name="type" value="Общественное пространство" id="b-type-6"><span>Общественное пространство</span></label><label class="chip"><input type="radio" name="type" value="Другое" id="b-type-8"><span>Другое</span></label></fieldset>
-      <fieldset class="field chips" id="b-pkg-field"><legend class="label">Пакет</legend><label class="chip"><input type="radio" name="pkg" value="Идея" id="b-pkg-0"><span>Идея</span></label><label class="chip"><input type="radio" name="pkg" value="Картинка" id="b-pkg-1"><span>Картинка</span></label><label class="chip"><input type="radio" name="pkg" value="Инструкция" id="b-pkg-2"><span>Инструкция</span></label><label class="chip"><input type="radio" name="pkg" value="Пока не знаю" id="b-pkg-3"><span>Пока не знаю</span></label></fieldset><p class="muted bf-req" id="b-pkg-note">«Идея» это планировка, «Картинка» добавляет визуализации, «Инструкция» это полный проект для подрядчика.</p>
+      <fieldset class="field chips" id="b-pkg-field"><legend class="label">Пакет</legend><label class="chip"><input type="radio" name="pkg" value="Идея" id="b-pkg-0"><span>Базовый · «Идея»</span></label><label class="chip"><input type="radio" name="pkg" value="Картинка" id="b-pkg-1"><span>Средний · «Картинка»</span></label><label class="chip"><input type="radio" name="pkg" value="Инструкция" id="b-pkg-2"><span>Полный · «Инструкция»</span></label><label class="chip"><input type="radio" name="pkg" value="Пока не знаю" id="b-pkg-3"><span>Пока не знаю</span></label></fieldset><p class="muted bf-req" id="b-pkg-note">Базовый «Идея» это планировка квартиры, средний «Картинка» добавляет картинки интерьера, полный «Инструкция» это полный проект для ремонта.</p>
       <fieldset class="field chips" id="b-scope-field"><legend class="label">Что нужно</legend><label class="chip"><input type="checkbox" name="scope" value="Концепция" id="b-scope-0"><span>Концепция</span></label><label class="chip"><input type="checkbox" name="scope" value="Дизайн-проект" id="b-scope-1"><span>Дизайн-проект</span></label><label class="chip"><input type="checkbox" name="scope" value="Рабочая документация" id="b-scope-2"><span>Рабочая документация</span></label><label class="chip"><input type="checkbox" name="scope" value="Визуализации" id="b-scope-3"><span>Визуализации</span></label><label class="chip"><input type="checkbox" name="scope" value="Анимация" id="b-scope-4"><span>Анимация</span></label><label class="chip"><input type="checkbox" name="scope" value="Пока не знаю" id="b-scope-6"><span>Пока не знаю</span></label></fieldset>
       <div class="field"><label class="label" for="b-area">Площадь, м²</label><input id="b-area" name="area" inputmode="numeric"></div>
       <fieldset class="field chips"><legend class="label">Сроки</legend><label class="chip"><input type="radio" name="when" value="Как можно скорее" id="b-when-0"><span>Как можно скорее</span></label><label class="chip"><input type="radio" name="when" value="В течение месяца" id="b-when-1"><span>В течение месяца</span></label><label class="chip"><input type="radio" name="when" value="Через 2–3 месяца" id="b-when-2"><span>Через 2–3 месяца</span></label><label class="chip"><input type="radio" name="when" value="Не спешу" id="b-when-3"><span>Не спешу</span></label></fieldset>

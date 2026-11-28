@@ -749,3 +749,44 @@ html, body { overflow-x: clip; }
 /* mobile menu: a vertical list (it sits inside the header, whose .wrap is a flex row) */
 .site-header .mobile-nav:not([hidden]) { display: block; min-height: 0; }
 .site-header .mobile-nav > * + * { margin-left: 0; }
+/* "Digital shepherd" author's note: a quiet pause between sections, always black with white text */
+.shepherd { margin-top: clamp(48px, 7vw, 96px); background: #0d0d0d; color: #f2f2ef; padding: clamp(36px, 7vw, 96px) clamp(20px, 6vw, 80px); }
+.shepherd .label { color: rgba(242,242,239,.55); margin: 0 0 clamp(20px, 3vw, 36px); }
+.shepherd-title { font-family: var(--font-display); font-size: clamp(34px, 6vw, 80px); line-height: 1.02; font-weight: 300; margin: 0 0 clamp(20px, 3vw, 36px); letter-spacing: -0.01em; }
+.shepherd-text { font-family: var(--font-display); font-size: clamp(20px, 2.6vw, 34px); line-height: 1.25; font-weight: 300; max-width: 22em; margin: 0 0 .6em; }
+.shepherd-note { color: rgba(242,242,239,.6) !important; max-width: 34em; margin: clamp(20px, 3vw, 32px) 0 0; }
+.gains a { color: inherit; text-underline-offset: 3px; }
+.shepherd-who { font-family: var(--font-display); font-size: clamp(17px, 1.6vw, 22px); line-height: 1.4; font-weight: 300; color: #f2f2ef; max-width: 30em; margin: clamp(24px, 3.5vw, 40px) 0 0; padding-top: clamp(16px, 2vw, 24px); border-top: 1px solid rgba(242,242,239,.25); }
+/* package cards: what you get (bold line), then who it suits */
+.pkg-card .pkg-subt { height: auto; min-height: 0; }
+.pkg-card .pkg-subt b { display: block; font-family: var(--font-display); font-weight: 400; font-size: var(--t-sl, 24px); line-height: 1.15; margin-bottom: 6px; }
+.pkg-card .pkg-count { height: auto; color: var(--muted, #8a8a86); }
+@media (min-width: 720px) { .pkg-card .pkg-subt { min-height: 4.6em; } .pkg-card .pkg-count { min-height: 4.2em; } }
+
+/* packages: concrete title first, abstract name as tag, size scale */
+.pkg-card .pkg-tag { display:flex; align-items:center; gap:10px; margin:0 0 8px; }
+.pkg-size { display:inline-flex; gap:3px; }
+.pkg-size i { width:14px; height:6px; border:1px solid currentColor; display:block; }
+.pkg-size i.on { background:var(--signal); border-color:var(--signal); }
+.pkg-card .pkg-name { text-transform:none; letter-spacing:0; font-size:var(--t-sl, 24px); line-height:1.15; margin-bottom:8px; }
+.pkg-card .pkg-subt { min-height:0 !important; }
+@media (min-width:720px){ .pkg-card .pkg-name{ min-height:2.3em; } .pkg-card .pkg-subt{ min-height:2.9em !important; } }
+
+/* price readable, middle package recommended */
+.pkg-card .pkg-meta { font-size:16px; color:var(--ink); text-transform:none; letter-spacing:0; }
+.pkg-card.pkg-pick { outline:2px solid var(--signal); outline-offset:0; }
+.pkg-card.pkg-pick { position:relative; }
+.pkg-pick-tag { position:absolute; top:0; right:0; background:var(--signal); color:var(--signal-ink); padding:2px 8px; letter-spacing:.04em; }
+
+.pkg-card .pkg-matrix { grid-template-columns: repeat(3, minmax(0,1fr)); }
+.pkg-card .pkg-matrix span { white-space: nowrap; }
+
+.pkg-card .pkg-meta { flex-direction:column; align-items:flex-start; justify-content:center; gap:2px; height:auto !important; }
+.pkg-card .pkg-meta small { font-size:13px; font-weight:400; color:var(--muted); line-height:1.35; }
+@media (min-width:720px){ .pkg-card .pkg-meta { min-height:4.6em; } }
+
+.nw { white-space:nowrap; }
+
+.pkg-tag { display:inline-flex; align-items:center; gap:8px; }
+th .pkg-tag { justify-content:center; }
+th.c small { display:block; }
