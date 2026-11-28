@@ -700,3 +700,26 @@ html, body { overflow-x: clip; }
 .art-group-photo figcaption { margin-top: 6px; }
 @media (min-width: 720px) { .art-group-photo { float: right; width: 300px; margin: 0 0 16px 32px; } .art-group:has(.art-group-photo) { max-width: none; display: flow-root; } }
 .section[id], .vz-item[id] { scroll-margin-top: 64px; }
+.bf-more { margin-top: clamp(32px, 5vw, 48px); border-top: 1px solid var(--line, #e6e6e2); padding-top: 24px; }
+.bf-more > summary { list-style: none; cursor: pointer; display: inline-flex; }
+.bf-more > summary::-webkit-details-marker { display: none; }
+.bf-more > summary::after { content: " +"; white-space: pre; }
+.bf-more[open] > summary::after { content: " −"; }
+.bf-more > .bf-note { margin: 12px 0 0; }
+.bf-req { margin: -4px 0 0; font-size: var(--t-s, 14px); }
+.bf-fold { padding-block: 0 !important; }
+.bf-fold > legend { width: 100%; padding: 0; float: left; }
+.bf-fold > legend + * { clear: both; }
+.bf-fold-btn { all: unset; box-sizing: border-box; cursor: pointer; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; width: 100%; padding: 18px 0; font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; }
+.bf-fold-btn:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.bf-fold-title::after { content: "  +"; white-space: pre; }
+.bf-fold.open .bf-fold-title::after { content: "  −"; }
+.bf-fold-count { white-space: nowrap; text-transform: none; letter-spacing: 0; }
+.bf-fold:not(.open) > :not(legend) { display: none !important; }
+.bf-fold.open { padding-bottom: 24px !important; }
+.bf-fold { gap: 0 !important; padding: 0 !important; }
+.bf-fold > legend.bf-num { display: flex; align-items: baseline; }
+.bf-fold > legend.bf-num::before { flex: none; padding: 18px 6px 18px 0; }
+.bf-fold.open > legend ~ * { margin-top: 20px; }
+.bf-brief:has(.bf-fold) { gap: 0 !important; row-gap: 0 !important; }
+.bf-brief:has(.bf-fold) > .bf-fold + .bf-fold { margin-top: 0 !important; }

@@ -119,7 +119,7 @@ function L(ru, en) { return EN_UI ? en : ru; }
       return viz && other ? 'anim' : 'house';
     };
     window.briefSync = function () {
-      if (pkgField) pkgField.hidden = !isFlat(); if (scopeField) scopeField.hidden = isFlat();
+      if (pkgField) pkgField.hidden = !isFlat(); var pkgNote = document.getElementById('b-pkg-note'); if (pkgNote) pkgNote.hidden = !isFlat(); if (scopeField) scopeField.hidden = isFlat();
       var k = briefKind();
       Array.prototype.forEach.call(document.querySelectorAll('#b-brief-link a, #brief-full'), function (a) { a.href = a.getAttribute('href').replace(/t=\w+/, 't=' + k); });
     };
@@ -335,4 +335,23 @@ function L(ru, en) { return EN_UI ? en : ru; }
   [100, 400, 900, 1600, 2600, 4000].forEach(function (ms) { setTimeout(fix, ms); });
   window.addEventListener('load', fix);
   document.querySelectorAll('img').forEach(function (i) { if (!i.complete) i.addEventListener('load', fix, { once: true }); });
+})();
+
+/* 2-minute form -> "Tell me more": carry the answers to the brief page */
+(function () {
+  var links = document.querySelectorAll('#b-brief-link a, #brief-full'); if (!links.length) return;
+  Array.prototype.forEach.call(links, function (a) { a.addEventListener('click', function () {
+    var v = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+    var m = document.querySelector('#brief-form input[name="messenger"]:checked');
+    var c = function (n) { var r = document.querySelector('#brief-form input[name="' + n + '"]:checked'); return r ? r.value : ''; };
+    var sc = Array.prototype.map.call(document.querySelectorAll('#brief-form input[name="scope"]:checked'), function (x) { return x.value; });
+    try { sessionStorage.setItem('briefCarry', JSON.stringify({ name: v('b-name'), contact: v('b-contact'), area: v('b-area'), task: v('b-task'), msg: m ? m.value : '', type: c('type'), pkg: c('pkg'), scope: sc, when: c('when') })); } catch (e) {}
+  }); });
+})();
+
+/* after the request is built, the "Tell me more" button below replaces the link above */
+(function () {
+  var f = document.getElementById('brief-form'), l = document.getElementById('b-brief-link'), a = document.getElementById('brief-after');
+  if (!f || !l || !a) return;
+  f.addEventListener('submit', function () { setTimeout(function () { if (!a.hidden) l.hidden = true; }, 0); });
 })();
