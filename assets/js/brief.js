@@ -115,15 +115,16 @@
     if (!name.value.trim()) { name.focus(); name.reportValidity(); return; }
     var b = form.querySelector('.bf-brief[data-brief="' + current() + '"]');
     var area = document.getElementById('bf-area'), task = document.getElementById('bf-task');
-    var no = T('не указано', 'not specified');
+    /* only what the visitor actually filled in, so the message stays short */
+    var line = function (label, v) { return v ? label + v : null; };
     var lines = [T('Заявка с сайта aivanovarchitect.com', 'Request from aivanovarchitect.com'),
       T('Имя: ', 'Name: ') + name.value.trim(),
-      T('Контакт: ', 'Contact: ') + (val('bf-msg') + ' ' + contact.value.trim()).trim(),
-      T('Объект: ', 'Property: ') + (val('e-type') || no),
-      isFlat() ? T('Пакет: ', 'Package: ') + (val('e-pkg') || T('не выбран', 'not chosen')) : T('Что нужно: ', 'Needed: ') + (vals('e-scope').join(', ') || no),
-      T('Площадь: ', 'Area: ') + (area.value.trim() ? area.value.trim() + T(' м²', ' m²') : no),
-      T('Сроки: ', 'Timeline: ') + (val('e-when') || no),
-      T('Задача: ', 'Task: ') + (task.value.trim() || no)];
+      line(T('Контакт: ', 'Contact: '), (val('bf-msg') + ' ' + contact.value.trim()).trim()),
+      line(T('Объект: ', 'Property: '), val('e-type')),
+      isFlat() ? line(T('Пакет: ', 'Package: '), val('e-pkg')) : line(T('Что нужно: ', 'Needed: '), vals('e-scope').join(', ')),
+      line(T('Площадь: ', 'Area: '), area.value.trim() ? area.value.trim() + T(' м²', ' m²') : ''),
+      line(T('Сроки: ', 'Timeline: '), val('e-when')),
+      line(T('Задача: ', 'Task: '), task.value.trim())].filter(function (x) { return x !== null; });
     var head = lines.length;
     var n = 0, answered = 0;
     each(b.querySelectorAll('.bf-sec'), function (sec) {

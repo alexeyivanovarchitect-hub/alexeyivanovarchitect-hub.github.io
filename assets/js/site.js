@@ -132,16 +132,18 @@ function L(ru, en) { return EN_UI ? en : ru; }
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var f = form.elements;
+      /* only what the visitor actually filled in, so the message stays short */
+      var pick = function (n) { return (form.querySelector('input[name="' + n + '"]:checked') || {}).value || ''; };
+      var line = function (label, v) { return v ? label + v : null; };
       var text = [
         L('Заявка с сайта aivanovarchitect.com','Request from aivanovarchitect.com'),
         L('Имя: ','Name: ') + f['name'].value,
-        L('Контакт: ','Contact: ') + (((form.querySelector('input[name="messenger"]:checked') || {}).value || '') + ' ' + f['contact'].value).trim(),
-        L('Объект: ','Property: ') + ((form.querySelector('input[name="type"]:checked') || {}).value || L('не указано','not specified')),
-        isFlat() ? null : L('Что нужно: ','Needed: ') + (Array.prototype.map.call(form.querySelectorAll('input[name="scope"]:checked'), function (c) { return c.value; }).join(', ') || L('не указано','not specified')),
-        L('Площадь: ','Area: ') + (f['area'].value ? f['area'].value + L(' м²',' m²') : L('не указана','not specified')),
-        isFlat() ? L('Пакет: ','Package: ') + ((form.querySelector('input[name="pkg"]:checked') || {}).value || L('не выбран','not chosen')) : null,
-        L('Сроки: ','Timeline: ') + ((form.querySelector('input[name="when"]:checked') || {}).value || L('не указаны','not specified')),
-        L('Задача: ','Task: ') + (f['task'].value || L('не указано','not specified')),
+        line(L('Контакт: ','Contact: '), (pick('messenger') + ' ' + f['contact'].value).trim()),
+        line(L('Объект: ','Property: '), pick('type')),
+        isFlat() ? line(L('Пакет: ','Package: '), pick('pkg')) : line(L('Что нужно: ','Needed: '), Array.prototype.map.call(form.querySelectorAll('input[name="scope"]:checked'), function (c) { return c.value; }).join(', ')),
+        line(L('Площадь: ','Area: '), f['area'].value ? f['area'].value + L(' м²',' m²') : ''),
+        line(L('Сроки: ','Timeline: '), pick('when')),
+        line(L('Задача: ','Task: '), f['task'].value.trim()),
         '', L('Фото, планы и примеры пришлю следом.','I will send photos, plans and examples next.')
       ].filter(function (x) { return x !== null; }).join('\n');
       out.textContent = text;
